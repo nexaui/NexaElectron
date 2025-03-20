@@ -1,6 +1,33 @@
 const path = require("path");
 const { app, BrowserWindow, Menu } = require("electron");
 const NexaExpress = require("./assets/NexaExpress");
+const fs = require("fs");
+
+// Set custom GPU cache path in a location with proper permissions
+const userDataPath = app.getPath("userData");
+const gpuCachePath = path.join(userDataPath, "GPUCache");
+app.commandLine.appendSwitch("gpu-cache-dir", gpuCachePath);
+
+// Add command line switches to suppress GPU cache errors
+app.commandLine.appendSwitch("disable-gpu-shader-disk-cache");
+app.commandLine.appendSwitch("ignore-gpu-blacklist");
+app.commandLine.appendSwitch("disable-gpu-process-crash-limit");
+
+// Disable GPU acceleration to prevent cache errors
+app.disableHardwareAcceleration();
+
+// Near the start of your file, before creating any windows
+process.on("uncaughtException", (error) => {
+  if (
+    error.message.includes("Unable to move the cache") ||
+    error.message.includes("Unable to create cache") ||
+    error.message.includes("Gpu Cache Creation failed")
+  ) {
+    // Silently ignore GPU cache errors
+    return;
+  }
+  console.error("Uncaught Exception:", error);
+});
 
 // Aktifkan reload otomatis dalam mode pengembangan
 if (process.env.NODE_ENV === "development") {
@@ -28,6 +55,18 @@ if (process.env.NODE_ENV === "development") {
   }
 }
 
+// Read nexaui.json configuration
+function getAppConfig() {
+  try {
+    const configPath = path.join(__dirname, "nexaui.json");
+    const configData = fs.readFileSync(configPath, "utf8");
+    return JSON.parse(configData);
+  } catch (err) {
+    console.error("Error reading nexaui.json:", err);
+    return { properti: { icon: "/assets/brand/logo.png" } }; // Default fallback
+  }
+}
+
 // Inisialisasi server Express
 const expressServer = new NexaExpress(__dirname);
 let port;
@@ -46,12 +85,18 @@ async function startServer() {
 startServer();
 
 function createWindow() {
+  // Get app configuration
+  const appConfig = getAppConfig();
+  const iconPath = appConfig.properti.icon || "/assets/brand/logo.png";
+
   // Buat jendela browser
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     autoHideMenuBar: true,
     show: false,
+    // Use icon from nexaui.json configuration
+    icon: path.join(__dirname, iconPath.replace(/^\//, "")),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
