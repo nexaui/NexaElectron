@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/assets/nexaui.dashboard.min.css">
+  </head>
+  
+    
+    <style>
+      /* Custom scrollbar styling */
+      #main-content {
+        max-height: 700px;
+        width: 100%;
+        overflow-y: auto;
+        scrollbar-width: thin; /* For Firefox */
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        #main-content {
+          max-height: 600px; /* Slightly smaller on tablets */
+        }
+      }
+
+      @media (max-width: 480px) {
+        #main-content {
+          max-height: 500px; /* Even smaller on mobile */
+        }
+      }
+
+      /* For Webkit browsers (Chrome, Safari, etc.) */
+      #main-content::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      #main-content::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+      }
+
+      #main-content::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        transition: background 0.3s ease;
+      }
+
+      #main-content::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      /* For dark mode */
+      html.dark #main-content::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      html.dark #main-content::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      html.dark #main-content::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+      .sidebar-app{
+        padding-left:10px;
+      }
+    </style>
+   <body data-nexakey>
+    <!-- partial:index.partial.html -->
+    <div class="app-container">
+      <div class="app-header">
+        <div class="app-header-left">
+          <span class="app-icon"></span>
+          <p class="app-name">NexaUI</p>
+          <div class="search-wrapper">
+            <input class="search-input" id="searchInput"type="text" placeholder="Search" />
+            <i data-feather="search"></i>
+          </div>
+        </div>
+        <div class="app-header-right">
+          <a
+             href="javascript:void(0);"
+            id="modeSwitch"
+            onclick="setMode()"
+            class="mode-switch"
+            title="Switch Theme"
+          >
+            <i data-feather="moon"></i>
+          </a>
+          <a style="margin-left: 10px;" href="/user/list/oauth/settings" class="add-btn" title="Add New Project">
+            <i data-feather="plus"></i>
+          </a>
+          <button class="notification-btn">
+            <i data-feather="bell"></i>
+          </button>
+          <a href="/user/list/oauth/profile" id="useAvatar" class="profile-btn">
+            <img src="/assets/avatar/wanita.png" />
+          </a>
+        </div>
+      </div>
+      <div class="app-content1">
+        <div class="nx-row">
+          <div class="nx-col-0">
+           <div class="sidebar-app">
+          <a href="/user/list/oauth/profile" class="app-sidebar-link active">
+            <i data-feather="home"></i>
+          </a>
+          <a href="/user/list/exsampel/modal" class="app-sidebar-link">
+            <i data-feather="pie-chart"></i>
+          </a>
+          <a href="/user/list/exsampel/NexaDom" class="app-sidebar-link">
+            <i data-feather="calendar"></i>
+          </a>
+          <a href="/user/list/exsampel/require" class="app-sidebar-link">
+            <i data-feather="database"></i>
+          </a>
+
+          <a href="/user/list/route/page5" class="app-sidebar-link">
+            <i data-feather="settings"></i>
+          </a>
+           <a onLogout='{"user":"off"}' href="javascript:void(0);" class="app-sidebar-link">
+            <i data-feather="log-out"></i>
+          </a>
+          <a href="/user/list/oauth/bantuan" class="app-sidebar-link">
+            <i data-feather="help-circle"></i>
+          </a>
+        </div>
+          </div>
+          <div class="nx-col-13">
+            <div id="main-content"></div>
+          </div>
+        </div>
+     
+      </div>
+    </div>
+    <!-- partial -->
+    <script type="module" src="/package/dashboard.js"></script>
+   </body>
+</html>

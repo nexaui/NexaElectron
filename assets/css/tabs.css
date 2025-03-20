@@ -1,0 +1,616 @@
+
+
+
+
+
+
+
+
+
+  .right-sidebar-grid {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 1px solid #dee2e6;
+  }
+  .nx-navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .nx-nav-brand {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    margin-right: 2rem;
+  }
+  .nx-nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nx-nav-item-tabs {
+    margin-right: 1.5rem;
+  }
+  .nx-nav-link-tabs {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .nx-nav-search {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .nx-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  .nx-nav-dropdown {
+    position: relative;
+  }
+  .nx-nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    min-width: 160px;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .nx-nav-dropdown:hover .nx-nav-dropdown-menu {
+    display: block;
+  }
+  .nx-nav-dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+  }
+  .nx-nav-dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+  }
+  @media (max-width: 768px) {
+    .nx-nav-toggle {
+      display: block;
+      margin-left: auto;
+      background: none;
+      border: none;
+      color: inherit;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    .nx-nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: inherit;
+      padding: 1rem;
+      flex-direction: column;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .nx-nav-menu.active {
+      display: flex;
+    }
+    
+    .nx-nav-item-tabs {
+      margin: 0.5rem 0;
+      width: 100%;
+    }
+
+    .nx-nav-link-tabs {
+      display: block;
+      width: 100%;
+    }
+
+    .nx-nav-search {
+      display: none;
+    }
+
+    .nx-nav-search.active {
+      display: flex;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background-color: inherit;
+    }
+
+    .nx-search-container {
+      width: 100%;
+    }
+
+    /* Dropdown responsif */
+    .nx-nav-dropdown-menu {
+      position: static;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding-left: 1rem;
+    }
+
+    .nx-nav-dropdown-item {
+      color: inherit;
+    }
+  }
+  .nx-search-container {
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    min-width: 240px;
+    margin-left: auto;
+  }
+  
+  .nx-search-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    padding: 4px;
+    outline: none;
+    font-size: 0.875rem;
+  }
+  
+  .nx-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .nx-search-shortcut {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-left: 8px;
+    user-select: none;
+  }
+
+  /* Override navbar background for search example */
+  #navbar-with-search + p + .nx-navbar {
+    background-color: #1a1a1a;
+  }
+  
+  #navbar-with-search + p + .nx-navbar .nx-nav-brand,
+  #navbar-with-search + p + .nx-navbar .nx-nav-link-tabs {
+    color: #fff;
+  }
+
+  /* Navbar Centered */
+  .nx-navbar-centered {
+    justify-content: center;
+    padding: 1rem 2rem;
+  }
+
+  .nx-navbar-centered .nx-nav-brand {
+    position: absolute;
+    left: 1rem;
+  }
+
+  .nx-navbar-centered .nx-nav-menu {
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  /* Navbar dengan Logo */
+  .nx-nav-logo {
+    height: 32px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  .nx-nav-brand-with-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Navbar Dark Mode */
+  .nx-navbar-dark {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nx-navbar-dark .nx-nav-brand,
+  .nx-navbar-dark .nx-nav-link-tabs {
+    color: rgba(255,255,255,0.9);
+  }
+
+  .nx-navbar-dark .nx-nav-link-tabs:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+
+  /* Navbar Transparan */
+  .nx-navbar-transparent {
+    background-color: transparent;
+    box-shadow: none;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nx-navbar-transparent .nx-nav-brand,
+  .nx-navbar-transparent .nx-nav-link-tabs {
+    color: rgba(255,255,255,0.9);
+  }
+
+  .nx-navbar-transparent .nx-nav-link-tabs:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  /* Navbar Fixed */
+  .nx-navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background-color: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease;
+  }
+
+  .nx-navbar-fixed-top.hide {
+    transform: translateY(-100%);
+  }
+
+  /* Notifikasi */
+  .nx-nav-notification {
+    position: relative;
+    margin-left: auto;
+  }
+
+
+
+  .nx-notification-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 320px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: none;
+    margin-top: 0.5rem;
+    z-index: 1000;
+  }
+
+  .nx-nav-notification:hover .nx-notification-menu {
+    display: block;
+  }
+
+  .nx-notification-header {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nx-notification-header h6 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .nx-notification-clear {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+
+  .nx-notification-body {
+    max-height: 360px;
+    overflow-y: auto;
+  }
+
+  .nx-notification-item {
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background-color 0.2s ease;
+  }
+
+  .nx-notification-item:hover {
+    background-color: #f8f9fa;
+  }
+
+  .nx-notification-content {
+    flex: 1;
+  }
+
+  .nx-notification-content p {
+    margin: 0;
+    color: #333;
+    font-size: 0.875rem;
+  }
+
+  .nx-notification-content small {
+    color: #666;
+    font-size: 0.75rem;
+  }
+
+  /* Icon untuk notifikasi */
+  .nx-icon {
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .nx-icon-bell::before {
+    content: "";
+  }
+
+  /* Posisi Menu Navbar */
+  .nx-nav-menu-left {
+    margin-right: auto;
+  }
+
+  .nx-nav-menu-center {
+    margin: 0 auto;
+  }
+
+  .nx-nav-menu-right {
+    margin-left: auto;
+  }
+
+  /* Navbar dengan menu di tengah dan brand di kiri */
+  .nx-navbar-menu-center {
+    position: relative;
+    justify-content: center;
+  }
+
+  .nx-navbar-menu-center .nx-nav-brand {
+/*    position: absolute;
+    left: 1rem;*/
+  }
+
+  .nx-navbar-menu-center .nx-nav-menu {
+    margin: 0 auto;
+  }
+
+  /* Navbar dengan menu di kanan dan brand di kiri */
+  .nx-navbar-menu-right {
+    justify-content: space-between;
+  }
+
+  .nx-navbar-menu-right .nx-nav-menu {
+    margin-left: auto;
+  }
+
+  /* Dark Navbar untuk Search Example */
+  .nx-navbar-search {
+    background-color: #1a1a1a;
+  }
+
+  .nx-navbar-search .nx-nav-brand,
+  .nx-navbar-search .nx-nav-link-tabs {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .nx-navbar-search .nx-nav-link-tabs:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nx-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nx-nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.nx-nav-tabs .nx-nav-item-tabs {
+  margin-bottom: -1px;
+}
+
+.nx-nav-tabs .nx-nav-link-tabs {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.nx-nav-tabs .nx-nav-link-tabs:hover {
+/*  border-color: #e9ecef #e9ecef #dee2e6;*/
+}
+
+.nx-nav-tabs .nx-nav-link-tabs.active {
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nx-nav-pills .nx-nav-link-tabs {
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.nx-nav-pills .nx-nav-link-tabs.active {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.nx-tab-content > .nx-tab-pane {
+  display: none;
+}
+
+.nx-tab-content > .active {
+  display: block;
+}
+
+/* Tambahan CSS untuk alignment dan styles */
+.nx-nav-justified {
+  width: 100%;
+}
+
+.nx-nav-justified .nx-nav-item-tabs {
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.nx-nav-fill .nx-nav-item-tabs {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.nx-justify-content-center {
+  justify-content: center !important;
+}
+
+.nx-justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.nx-justify-content-between {
+  justify-content: space-between !important;
+}
+
+.nx-flex-column {
+  flex-direction: column !important;
+}
+
+.nx-nav-link-tabs i {
+  margin-right: 5px;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+/* Modern styling untuk navigasi */
+.nx-nav {
+  --nav-link-color: #4a5568;
+  --nav-link-hover-color: #2d3748;
+  --nav-link-active-color: #3182ce;
+  --nav-link-active-bg: #ebf8ff;
+  --nav-border-color: #e2e8f0;
+}
+
+.nx-nav-link-tabs {
+  color: var(--nav-link-color);
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 0.375rem;
+}
+
+.nx-nav-link-tabs:hover {
+  color: var(--nav-link-hover-color);
+/*  background-color: #f7fafc;*/
+  text-decoration: none;
+}
+
+/* Modern Tabs */
+.nx-nav-tabs {
+  border-bottom: 2px solid var(--nav-border-color);
+  gap: 0.5rem;
+}
+
+.nx-nav-tabs .nx-nav-link-tabs {
+  margin-bottom: -2px;
+  border: none;
+  position: relative;
+}
+
+.nx-nav-tabs .nx-nav-link-tabs.active {
+  color: var(--nav-link-active-color);
+  background-color: transparent;
+  border: none;
+}
+
+.nx-nav-tabs .nx-nav-link-tabs.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--nav-link-active-color);
+  border-radius: 2px 2px 0 0;
+}
+
+/* Modern Pills */
+.nx-nav-pills .nx-nav-link-tabs {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.nx-nav-pills .nx-nav-link-tabs.active {
+  color: #fff;
+  background-color: var(--nav-link-active-color);
+  box-shadow: 0 4px 6px -1px rgba(49, 130, 206, 0.1), 0 2px 4px -1px rgba(49, 130, 206, 0.06);
+}
+
+/* Modern Vertical Nav */
+.nx-nav.nx-flex-column {
+  gap: 0.5rem;
+}
+
+.nx-nav.nx-flex-column .nx-nav-link-tabs {
+  border-radius: 0.5rem;
+}
+
+/* Modern Justified & Fill */
+.nx-nav-justified .nx-nav-link-tabs,
+.nx-nav-fill .nx-nav-link-tabs {
+  text-align: center;
+}
+
+/* Modern Alignment Styles */
+.nx-justify-content-center,
+.nx-justify-content-end,
+.nx-justify-content-between {
+  gap: 0.5rem;
+}
+
+body.dark-mode-grid .nx-nav-link-tabs {
+    color: var(--nav-link-color);
+}
+
+/*body.dark-mode-grid a[class*="-link"], body.dark-mode-grid a[class*="link-"] {
+    color: var(--nav-link-color);
+}*/

@@ -1,0 +1,1834 @@
+
+    .form-nexa label {
+        display: inline-block;
+        margin-bottom: 0.1rem;
+        font-weight: 500;
+        color: #212529;
+        font-size:12px;
+    }
+
+    /* Control styles */
+    [class*="form-nexa-control"] {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #e0e0e0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    [class*="form-nexa-control"]:hover {
+        border-color: #999999; /* Mengganti dari #b0b0b0 */
+        background-color: #fafafa;
+    }
+
+    /* Menghapus outline biru default browser dan mempertahankan border color */
+    [class*="form-nexa-control"]:focus {
+        outline: none !important;
+        border-color: #e0e0e0 !important; /* Menggunakan warna border default */
+        box-shadow: none !important; /* Menghilangkan box-shadow */
+    }
+
+    /* Menghapus outline biru untuk semua input */
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus {
+        outline: none !important;
+        border-color: #e0e0e0 !important;
+        box-shadow: none !important;
+    }
+
+    /* Menghapus outline biru untuk button */
+    .form-nexa-btn:focus,
+    .btn:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Menghapus outline biru untuk modal button */
+    .nx-modal-footer .btn:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Menghapus outline biru untuk select */
+    select.form-nexa-control:focus {
+        outline: none !important;
+        border-color: #e0e0e0 !important;
+        box-shadow: none !important;
+    }
+
+    /* Dark mode adjustments */
+    @media (prefers-color-scheme: dark) {
+        [class*="form-nexa-control"]:focus,
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            border-color: #404040 !important; /* Menggunakan warna border dark mode default */
+            box-shadow: none !important;
+        }
+    }
+
+    /* States - Hanya untuk class is-valid dan is-invalid */
+    .is-invalid {
+        border-color: #f44336;
+    }
+
+    .is-valid {
+        border-color: #4caf50;
+    }
+
+    /* Readonly state */
+    [readonly] {
+        background-color: #e9ecef;
+        opacity: 1;
+    }
+
+    .form-nexa-group {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .form-nexa-icon {
+        position: relative;
+    }
+
+    .form-nexa-icon input {
+        padding-left: 2.5rem;
+    }
+
+    .form-nexa-icon i {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+    }
+
+    /* Tambahan style untuk textarea */
+    textarea.form-nexa-control {
+        min-height: 100px;
+        resize: vertical;
+    }
+    
+    /* Style untuk select */
+    select.form-nexa-control {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 16px 12px;
+        padding-right: 2.25rem;
+    }
+    
+    /* Pesan validasi */
+    .form-nexa-feedback {
+        display: none;
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 0.875em;
+    }
+    
+    .is-invalid ~ .invalid-feedback {
+        display: block;
+        color: #f44336;
+    }
+    
+    .is-valid ~ .valid-feedback {
+        display: block;
+        color: #4caf50;
+    }
+    
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        [class*="form-nexa-control"] {
+            background-color: #1e1e1e;
+            border-color: #404040;
+            color: #e0e0e0;
+        }
+        
+        [class*="form-nexa-control"]:hover {
+            background-color: #252525;
+            border-color: #505050;
+        }
+        
+        [class*="form-nexa-control"]:focus {
+            background-color: #1e1e1e;
+            border-color: #666666; /* Mengganti dari warna biru */
+            box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.25); /* Menambahkan box-shadow dengan warna abu-abu */
+        }
+        
+        .form-nexa-control::placeholder {
+            color: #6c757d;
+        }
+        
+        .form-nexa label {
+            color: #e0e0e0;
+        }
+        
+        .form-nexa-control:disabled,
+        .form-nexa-control[readonly] {
+            background-color: #1a1d20;
+        }
+        
+        .form-nexa-control:focus {
+            border-color: #fff;
+        }
+    }
+
+    .form-nexa-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
+    }
+    
+    .form-nexa-col {
+        flex: 1 0 0%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+
+    /* Grid System Columns */
+    .form-nx-col-1 {
+        flex: 0 0 auto;
+        width: 8.33333333%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-3 {
+        flex: 0 0 auto;
+        width: 25%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-5 {
+        flex: 0 0 auto;
+        width: 41.66666667%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-6 {
+        flex: 0 0 auto;
+        width: 50%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-7 {
+        flex: 0 0 auto;
+        width: 58.33333333%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-9 {
+        flex: 0 0 auto;
+        width: 75%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-11 {
+        flex: 0 0 auto;
+        width: 91.66666667%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .form-nx-col-12 {
+        flex: 0 0 auto;
+        width: 100%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    /* Responsive Grid */
+    @media (max-width: 576px) {
+        [class*="form-nx-col-"] {
+            width: 100%;
+        }
+    }
+
+    /* Responsive Utilities */
+    /* Hide elements */
+    .form-nexa-hide-xs {
+        @media (max-width: 576px) { display: none !important; }
+    }
+    
+    .form-nexa-hide-sm {
+        @media (min-width: 577px) and (max-width: 768px) { display: none !important; }
+    }
+    
+    .form-nexa-hide-md {
+        @media (min-width: 769px) and (max-width: 992px) { display: none !important; }
+    }
+    
+    .form-nexa-hide-lg {
+        @media (min-width: 993px) { display: none !important; }
+    }
+    
+    /* Stack elements */
+    .form-nexa-stack-xs {
+        @media (max-width: 576px) {
+            flex-direction: column !important;
+            > * {
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+    }
+    
+    /* Responsive spacing */
+    @media (max-width: 576px) {
+        .form-nexa-spacing-xs {
+            margin-bottom: 1rem !important;
+        }
+    }
+    
+    /* Responsive text alignment */
+    .form-nexa-text-center-xs {
+        @media (max-width: 576px) { text-align: center !important; }
+    }
+    
+    .form-nexa-text-left-xs {
+        @media (max-width: 576px) { text-align: left !important; }
+    }
+    
+    .form-nexa-text-right-xs {
+        @media (max-width: 576px) { text-align: right !important; }
+    }
+    
+    /* Responsive input sizes */
+    @media (max-width: 576px) {
+        .form-nexa-control-responsive {
+            font-size: 16px !important; /* Prevent zoom on iOS */
+            padding: 0.5rem !important;
+        }
+    }
+    
+    /* Responsive input groups */
+    @media (max-width: 576px) {
+        .form-nexa-input-group-stack {
+            flex-direction: column !important;
+            
+            > * {
+                width: 100% !important;
+                margin-left: 0 !important;
+                border-radius: 0 !important;
+            }
+            
+            > :first-child {
+                border-top-left-radius: 4px !important;
+                border-top-right-radius: 4px !important;
+            }
+            
+            > :last-child {
+                border-bottom-left-radius: 4px !important;
+                border-bottom-right-radius: 4px !important;
+            }
+        }
+    }
+    
+    /* Responsive order */
+    @media (max-width: 576px) {
+        .form-nexa-order-first-xs { order: -1 !important; }
+        .form-nexa-order-last-xs { order: 999 !important; }
+    }
+
+    /* Floating Label */
+    .form-nexa-floating {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .form-nexa-floating .form-nexa-control {
+/*      min-height: 3.5rem;*/
+/*      padding: 1rem 0.75rem;*/
+    }
+
+    .form-nexa-floating label {
+        position: absolute;
+        top: 50%;
+        left: 0.75rem;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+        color: #757575;
+        padding: 0 0.25rem;
+        margin: 0;
+        background-color: transparent;
+        z-index: 2;
+    }
+
+    .form-nexa-floating .form-nexa-control:focus ~ label,
+    .form-nexa-floating .form-nexa-control:not(:placeholder-shown) ~ label {
+        top: 0;
+        transform: translateY(-50%) scale(0.85);
+        background-color: #fff;
+    }
+
+    /* Dark mode untuk floating label */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-floating label {
+            color: #adb5bd;
+        }
+        
+        .form-nexa-floating .form-nexa-control:focus ~ label,
+        .form-nexa-floating .form-nexa-control:not(:placeholder-shown) ~ label {
+            color: #999999;
+            background-color: #1e1e1e;
+        }
+    }
+    .form-nexa-control-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        height: calc(1.4em + 0.5rem + 2px);
+        min-height: unset;
+    }
+    /* Ukuran large untuk floating label */
+    .form-nexa-control-lg {
+        padding: 0.75rem 1rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
+        height: calc(1.5em + 1.5rem + 2px);
+    }
+    /* Ukuran small untuk floating label */
+    .form-nexa-floating .form-nexa-control-sm {
+        min-height: 2.5rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    /* Ukuran large untuk floating label */
+    .form-nexa-floating .form-nexa-control-lg {
+        min-height: 4rem;
+        padding: 1.25rem 0.75rem;
+    }
+
+    /* Input Group */
+    .form-nexa-input-group {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .form-nexa-input-group-text {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0.75rem;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        color: #212529;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .form-nexa-input-group-text:hover {
+        border-color: #b0b0b0;
+        background-color: #fafafa;
+    }
+
+    /* Memperbaiki border yang tumpang tindih */
+    .form-nexa-input-group > * {
+        margin-left: -1px;  /* Mengurangi gap antar elemen */
+    }
+
+    .form-nexa-input-group > :first-child {
+        margin-left: 0;  /* Reset margin untuk elemen pertama */
+    }
+
+    /* Hover dan Focus state */
+    .form-nexa-input-group-text:hover {
+        background-color: #f8f9fa;
+    }
+
+    .form-nexa-input-group .form-nexa-control:focus {
+        z-index: 1;  /* Memastikan border focus selalu di atas */
+    }
+
+    .form-nexa-input-group-text:active {
+        border-color: #2196f3;
+        background-color: #fff;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-input-group-text {
+            background-color: #1e1e1e;
+            border-color: #404040;
+            color: #e0e0e0;
+        }
+        
+        .form-nexa-input-group-text:hover {
+            background-color: #252525;
+            border-color: #505050;
+        }
+        
+        .form-nexa-input-group-text:active {
+            background-color: #1e1e1e;
+            border-color: #2196f3;
+        }
+    }
+
+    .form-nexa-input-group > .form-nexa-control {
+        flex: 1 1 auto;
+    }
+
+    /* Tambahkan border-radius yang tepat */
+    .form-nexa-input-group > :first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .form-nexa-input-group > :last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .form-nexa-input-group > :not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+
+    /* Dark mode tambahan */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-input-group-text {
+            background-color: #2b3035;
+            border-color: #495057;
+            color: #e9ecef;
+        }
+    }
+
+    /* Checkbox & Radio */
+    .form-nexa-check,
+    .form-nexa-radio {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 1.75rem;
+        margin-bottom: 0.75rem;
+        cursor: pointer;
+    }
+
+    .form-nexa-check-input,
+    .form-nexa-radio-input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Custom Checkbox */
+    .form-nexa-check-input ~ .form-nexa-check-label::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: #fff;
+        border: 2px solid #e0e0e0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .form-nexa-check-input:checked ~ .form-nexa-check-label::before {
+        background-color: #2196f3;
+        border-color: #2196f3;
+    }
+
+    .form-nexa-check-input:checked ~ .form-nexa-check-label::after {
+        content: "";
+        position: absolute;
+        left: 0.4rem;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        width: 0.45rem;
+        height: 0.85rem;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+    }
+
+    /* Custom Radio */
+    .form-nexa-radio-input ~ .form-nexa-radio-label::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 50%;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .form-nexa-radio-input:checked ~ .form-nexa-radio-label::after {
+        content: "";
+        position: absolute;
+        left: 0.375rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+
+    .form-nexa-radio-input:checked ~ .form-nexa-radio-label::before {
+        background-color: #2196f3;
+        border-color: #2196f3;
+    }
+
+    /* Hover Effects */
+    .form-nexa-check-input:not(:disabled) ~ .form-nexa-check-label:hover::before,
+    .form-nexa-radio-input:not(:disabled) ~ .form-nexa-radio-label:hover::before {
+        border-color: #2196f3;
+    }
+
+    /* Focus Effects */
+    .form-nexa-check-input:focus ~ .form-nexa-check-label::before,
+    .form-nexa-radio-input:focus ~ .form-nexa-radio-label::before {
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    }
+
+    /* Disabled State */
+    .form-nexa-check-input:disabled ~ .form-nexa-check-label,
+    .form-nexa-radio-input:disabled ~ .form-nexa-radio-label {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-check-input ~ .form-nexa-check-label::before,
+        .form-nexa-radio-input ~ .form-nexa-radio-label::before {
+            background-color: #1e1e1e;
+            border-color: #404040;
+        }
+
+        .form-nexa-check-input:checked ~ .form-nexa-check-label::before,
+        .form-nexa-radio-input:checked ~ .form-nexa-radio-label::before {
+            background-color: #2196f3;
+            border-color: #2196f3;
+        }
+
+        .form-nexa-check-label,
+        .form-nexa-radio-label {
+            color: #e0e0e0;
+        }
+    }
+
+    /* Range Slider */
+    .form-nexa-range {
+        width: 100%;
+        height: 1.5rem;
+        padding: 0;
+        background-color: transparent;
+        appearance: none;
+    }
+
+    .form-nexa-range::-webkit-slider-thumb {
+        appearance: none;
+        width: 1rem;
+        height: 1rem;
+        background: #0d6efd;
+        border: 0;
+        transition: background-color .15s ease-in-out;
+    }
+
+    /* Dark mode tambahan */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-input-group-text {
+            background-color: #1a1d20;
+            border-color: #495057;
+            color: #e9ecef;
+        }
+        
+        .form-nexa-floating input:focus ~ label,
+        .form-nexa-floating input:not(:placeholder-shown) ~ label {
+            background: #2b3035;
+            color: #e9ecef;
+        }
+    }
+
+    /* Floating Label dengan Icon */
+    .form-nexa-floating .form-nexa-icon {
+        position: relative;
+    }
+
+    .form-nexa-floating .form-nexa-icon i {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+        z-index: 2;
+    }
+
+    .form-nexa-floating .form-nexa-icon input {
+        padding-left: 2.5rem;
+    }
+
+    .form-nexa-floating .form-nexa-icon label {
+        left: 2.5rem; /* Sesuaikan dengan lebar icon */
+    }
+
+    /* Dark mode untuk floating label dengan icon */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-floating .form-nexa-icon i {
+            color: #adb5bd;
+        }
+        
+        .form-nexa-floating .form-nexa-icon input:focus ~ i,
+        .form-nexa-floating .form-nexa-icon input:not(:placeholder-shown) ~ i {
+            color: #999999;
+        }
+    }
+
+    /* File Input Modern */
+    .form-nexa-file {
+        position: relative;
+        width: 100%;
+    }
+
+    .form-nexa-file-input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .form-nexa-file-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        background-color: #f8f9fa;
+        border: 2px dashed #e0e0e0;
+        border-radius: 4px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .form-nexa-file-label i {
+        font-size: 2rem;
+        color: #666666; /* Mengganti dari #2196f3 */
+        margin-bottom: 0.5rem;
+    }
+
+    .form-nexa-file-text {
+        margin-bottom: 0.5rem;
+        color: #757575;
+    }
+
+    .form-nexa-file-button {
+        padding: 0.5rem 1.5rem;
+        background-color: #666666; /* Mengganti dari #2196f3 */
+        color: white;
+        border-radius: 4px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    /* Hover state */
+    .form-nexa-file-input:hover + .form-nexa-file-label {
+        border-color: #666666; /* Mengganti dari #2196f3 */
+        background-color: #fff;
+    }
+
+    .form-nexa-file-input:hover + .form-nexa-file-label .form-nexa-file-button {
+        background-color: #555555; /* Mengganti dari #1976d2 */
+    }
+
+    /* Focus state */
+    .form-nexa-file-input:focus + .form-nexa-file-label {
+        border-color: #666666; /* Mengganti dari #2196f3 */
+        box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.1);
+    }
+
+    /* Drag state */
+    .form-nexa-file-label.drag-active {
+        background-color: #f0f0f0; /* Mengganti dari #e3f2fd */
+        border-color: #666666; /* Mengganti dari #2196f3 */
+    }
+
+    /* File list */
+    .form-nexa-file-list {
+        margin-top: 0rem;
+    }
+
+    .form-nexa-file-item {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        background-color: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+    }
+
+    .form-nexa-file-item i {
+        margin-right: 0.5rem;
+        color: #666666; /* Mengganti dari #2196f3 */
+    }
+
+    .form-nexa-file-item-name {
+        flex: 1;
+    }
+
+    .form-nexa-file-item-remove {
+        cursor: pointer;
+        color: #f44336;
+        padding: 0.25rem;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-file-label {
+            background-color: #1e1e1e;
+            border-color: #404040;
+        }
+        
+        .form-nexa-file-text {
+            color: #adb5bd;
+        }
+        
+        .form-nexa-file-input:hover + .form-nexa-file-label {
+            background-color: #252525;
+            border-color: #2196f3;
+        }
+        
+        .form-nexa-file-label.drag-active {
+            background-color: #2c3034; /* Mengganti dari #0d47a1 */
+        }
+        
+        .form-nexa-file-item {
+            background-color: #1e1e1e;
+            border-color: #404040;
+            color: #e0e0e0;
+        }
+    }
+
+
+    /* Responsive Form Grid */
+    @media (max-width: 576px) {
+        .nx-row > [class*="nx-col-"] {
+            margin-bottom: 1rem;
+        }
+        
+        .form-nexa-icon input {
+            font-size: 16px; /* Mencegah zoom di iOS */
+        }
+        
+        .form-nexa label {
+            font-size: 0.9rem;
+        }
+    }
+  /* Tambahkan CSS berikut untuk mengatur posisi ikon password-toggle */
+    .form-nexa-icon {
+        position: relative;
+    }
+
+    .password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    /* Tambahkan padding kanan pada input password untuk memberi ruang pada ikon */
+    .form-nexa-icon input[type="password"] {
+        padding-right: 35px;
+    }
+
+    /* Style khusus untuk password-toggle di form floating */
+    .form-nexa-floating .form-nexa-icon .password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 4;
+    }
+
+    /* Pastikan input password pada floating form memiliki padding yang cukup */
+    .form-nexa-floating .form-nexa-icon input[type="password"] {
+        padding-right: 35px;
+    }
+
+    /* Tambahkan style khusus untuk form floating password toggle */
+    .form-nexa-floating .password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 5;
+        color: #6c757d;
+    }
+
+    /* Pastikan input password memiliki padding yang cukup */
+    .form-nexa-floating input[type="password"] {
+        padding-right: 35px !important;
+    }
+
+    /* Pastikan container memiliki position relative */
+    .form-nexa-floating .form-nexa-icon {
+        position: relative !important;
+    }
+
+    /* Tambahkan hover effect */
+    .form-nexa-floating .password-toggle:hover {
+        color: #2196f3;
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-floating .password-toggle {
+            color: #adb5bd;
+        }
+        
+        .form-nexa-floating .password-toggle:hover {
+            color: #2196f3;
+        }
+    }
+
+    /* Style untuk Input Group Responsive dengan Icon */
+    .form-nexa-input-group-icon {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+    }
+
+    .form-nexa-input-group-icon .form-nexa-input-group-text {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0.75rem;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        color: #212529;
+        gap: 0.5rem;
+    }
+
+    /* Atur border radius untuk elemen pertama */
+    .form-nexa-input-group-icon .form-nexa-input-group-text:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+    }
+
+    /* Atur border radius untuk elemen terakhir */
+    .form-nexa-input-group-icon .form-nexa-input-group-text:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
+    }
+
+    /* Atur border untuk input di tengah */
+    .form-nexa-input-group-icon .form-nexa-control {
+        border-radius: 0;
+        border-right: none;
+        border-left: none;
+        /* Hapus validasi otomatis */
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        outline: -webkit-focus-ring-color auto 0px !important;
+    }
+
+    /* Hapus style validasi */
+    .form-nexa-input-group-icon .form-nexa-control:valid {
+        border-color: #e0e0e0 !important;
+        background-color: #fff !important;
+        box-shadow: none !important;
+    }
+
+    .form-nexa-input-group-icon .form-nexa-control:invalid {
+        border-color: #e0e0e0 !important;
+        background-color: #fff !important;
+        box-shadow: none !important;
+    }
+
+    /* Hover state */
+    .form-nexa-input-group-icon .form-nexa-input-group-text:hover {
+        border-color: #b0b0b0;
+        background-color: #fafafa;
+    }
+
+    /* Focus state */
+    .form-nexa-input-group-icon .form-nexa-control:focus {
+        color: #212529;
+        background-color: #fff;
+        border-color: #b0b0b0;
+        outline: 0;
+        box-shadow: none;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-input-group-icon .form-nexa-input-group-text {
+            background-color: #1e1e1e;
+            border-color: #404040;
+            color: #e0e0e0;
+        }
+
+        .form-nexa-input-group-icon .form-nexa-input-group-text:hover {
+            background-color: #252525;
+            border-color: #505050;
+        }
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+        .form-nexa-input-group-icon.form-nexa-input-group-stack {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-nexa-input-group-icon.form-nexa-input-group-stack .form-nexa-input-group-text,
+        .form-nexa-input-group-icon.form-nexa-input-group-stack .form-nexa-control {
+            width: 100%;
+            border-radius: 0.25rem;
+            border: 1px solid #e0e0e0;
+        }
+    }
+    
+    /* Select dengan Icon */
+    .form-nexa-select-icon {
+        position: relative;
+    }
+
+    .form-nexa-select-icon i {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .form-nexa-select-icon select {
+        padding-left: 2.5rem;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 16px 12px;
+    }
+
+    /* Dark mode untuk select dengan icon */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-select-icon i {
+            color: #adb5bd;
+        }
+        
+        .form-nexa-select-icon select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        }
+        
+        .form-nexa-select-icon select:focus ~ i {
+            color: #999999;
+        }
+    }
+
+    /* Hover state */
+    .form-nexa-select-icon:hover i {
+        color: #999999;
+    }
+
+    /* Focus state */
+    .form-nexa-select-icon select:focus ~ i {
+        color: #999999;
+    }
+    
+    /* Input Sizes */
+    .form-nexa-control-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        height: calc(1.4em + 0.5rem + 2px);
+        min-height: unset;
+    }
+
+    /* Input Large - untuk konsistensi */
+    .form-nexa-control-lg {
+        padding: 0.75rem 1rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
+        height: calc(1.5em + 1.5rem + 2px);
+    }
+
+    /* Base input untuk perbandingan */
+    [class*="form-nexa-control"] {
+        height: calc(1.5em + 1rem + 2px);
+    }
+
+    /* Switch/Toggle */
+    .form-nexa-switch {
+        position: relative;
+        display: inline-block;
+        width: 48px;
+        height: 24px;
+        margin: 0;
+    }
+
+    .form-nexa-switch-input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .form-nexa-switch-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #e0e0e0;
+        transition: .4s;
+        border-radius: 24px;
+    }
+
+    .form-nexa-switch-slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+    /* Checked state */
+    .form-nexa-switch-input:checked + .form-nexa-switch-slider {
+        background-color: #666666;
+    }
+
+    .form-nexa-switch-input:checked + .form-nexa-switch-slider:before {
+        transform: translateX(24px);
+    }
+
+    /* Focus state */
+    .form-nexa-switch-input:focus + .form-nexa-switch-slider {
+        box-shadow: 0 0 1px #666666;
+    }
+
+    /* Disabled state */
+    .form-nexa-switch-input:disabled + .form-nexa-switch-slider {
+        opacity: 0.6;
+        cursor: not-allowed;
+        background-color: #ccc;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-switch-slider {
+            background-color: #404040;
+        }
+        
+        .form-nexa-switch-slider:before {
+            background-color: #e0e0e0;
+        }
+        
+        .form-nexa-switch-input:checked + .form-nexa-switch-slider {
+            background-color: #666666;
+        }
+        
+        .form-nexa-switch-input:disabled + .form-nexa-switch-slider {
+            background-color: #333;
+        }
+    }
+
+    /* Switch container */
+    .form-nexa-switch-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-nexa-switch-label {
+        cursor: pointer;
+        user-select: none;
+        color: #212529;
+    }
+
+    /* Disabled label */
+    .form-nexa-switch-input:disabled ~ .form-nexa-switch-label {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* Dark mode untuk label */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-switch-label {
+            color: #e0e0e0;
+        }
+    }
+    
+    /* Date Picker Styles */
+    .form-nexa-date {
+        margin-bottom: 1rem;
+    }
+
+    .form-nexa-date input[type="date"],
+    .form-nexa-date input[type="datetime-local"],
+    .form-nexa-date input[type="month"],
+    .form-nexa-date input[type="time"],
+    .form-nexa-date input[type="week"] {
+        padding-right: 2.5rem;
+        min-height: calc(1.5em + 0.75rem + 2px);
+    }
+
+    /* Menyembunyikan icon default dari browser */
+    .form-nexa-date input::-webkit-calendar-picker-indicator {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+    }
+
+    /* Custom icon styling */
+    .form-nexa-date .form-nexa-icon i {
+        color: #6c757d;
+        pointer-events: none;
+    }
+
+    /* Hover state */
+    .form-nexa-date .form-nexa-control:hover {
+        border-color: #b0b0b0;
+    }
+
+    .form-nexa-date .form-nexa-control:hover + i {
+        color: #666666; /* Mengganti dari #2196f3 */
+    }
+
+    /* Focus state */
+    .form-nexa-date .form-nexa-control:focus {
+        border-color: #666666;
+        box-shadow: 0 0 0 0.2rem rgba(102, 102, 102, 0.25);
+    }
+
+    .form-nexa-date .form-nexa-control:focus + i {
+        color: #666666; /* Mengganti dari #2196f3 */
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-date .form-nexa-icon i {
+            color: #adb5bd;
+        }
+
+        .form-nexa-date .form-nexa-control {
+            background-color: #1e1e1e;
+            border-color: #404040;
+            color: #e0e0e0;
+        }
+
+        .form-nexa-date .form-nexa-control:hover {
+            background-color: #252525;
+            border-color: #505050;
+        }
+
+        .form-nexa-date .form-nexa-control:focus {
+            background-color: #1e1e1e;
+            border-color: #666666;
+        }
+    }
+
+    /* Responsive styling */
+    @media (max-width: 576px) {
+        .form-nexa-date input[type="date"],
+        .form-nexa-date input[type="datetime-local"],
+        .form-nexa-date input[type="month"],
+        .form-nexa-date input[type="time"],
+        .form-nexa-date input[type="week"] {
+            font-size: 16px; /* Mencegah zoom di iOS */
+        }
+    }
+    
+    /* Text Editor Styles */
+    .form-nexa-editor {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-nexa-editor label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #212529;
+    }
+
+    .form-nexa-editor-control {
+        width: 100%;
+        min-height: 200px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        background-color: #fff;
+    }
+
+    /* Quill specific styles */
+    .ql-toolbar.ql-snow {
+        border-color: #e0e0e0 !important;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        background-color: #f8f9fa;
+    }
+
+    .ql-container.ql-snow {
+        border-color: #e0e0e0 !important;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        font-family: inherit;
+    }
+
+    .ql-editor {
+        min-height: 150px;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-editor label {
+            color: #e0e0e0;
+        }
+
+        .form-nexa-editor-control {
+            background-color: #1a1d20;
+            border-color: #404040;
+        }
+
+        .ql-toolbar.ql-snow {
+            background-color: #2b3035;
+            border-color: #404040 !important;
+        }
+
+        .ql-container.ql-snow {
+            border-color: #404040 !important;
+        }
+
+        .ql-snow .ql-stroke {
+            stroke: #e0e0e0;
+        }
+
+        .ql-snow .ql-fill {
+            fill: #e0e0e0;
+        }
+
+        .ql-snow .ql-picker {
+            color: #e0e0e0;
+        }
+
+        .ql-snow .ql-picker-options {
+            background-color: #2b3035;
+            border-color: #404040;
+        }
+
+        .ql-editor {
+            color: #e0e0e0;
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 576px) {
+        .ql-toolbar.ql-snow {
+            flex-wrap: wrap;
+        }
+        
+        .ql-toolbar.ql-snow .ql-formats {
+            margin-right: 0;
+            margin-bottom: 4px;
+        }
+    }
+    
+    /* Form Wizard Styles */
+    .form-nexa-wizard {
+        margin-bottom: 2rem;
+    }
+
+    .form-nexa-wizard-progress {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    /* Progress Line */
+    .form-nexa-wizard-progress::before {
+        content: '';
+        position: absolute;
+        top: 24px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #e9ecef;
+        z-index: 1;
+    }
+
+    .form-nexa-wizard-progress-step {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        text-align: center;
+    }
+
+    .step-number {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #e9ecef;
+        color: #adb5bd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+    }
+
+    .step-text {
+        color: #adb5bd;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin-top: 0.5rem;
+    }
+
+    /* Active State */
+    .form-nexa-wizard-progress-step.active .step-number {
+        background: #666666;
+        border-color: #666666;
+        color: #fff;
+        box-shadow: 0 0 0 4px rgba(102, 102, 102, 0.15);
+    }
+
+    .form-nexa-wizard-progress-step.active .step-text {
+        color: #666666;
+    }
+
+    /* Completed State */
+    .form-nexa-wizard-progress-step.completed .step-number {
+        background: #fff;
+        border-color: #666666;
+        color: #666666;
+    }
+
+    .form-nexa-wizard-progress-step.completed .step-text {
+        color: #6c757d;
+    }
+
+    /* Progress Line Fill */
+    .form-nexa-wizard-progress-step.completed::after {
+        content: '';
+        position: absolute;
+        top: 24px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #666666;
+        z-index: 1;
+    }
+
+    /* Form Steps */
+    .form-nexa-wizard-step {
+        display: none;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .form-nexa-wizard-step.active {
+        display: block;
+    }
+
+    /* Navigation Buttons */
+    .form-nexa-wizard-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+
+    .form-nexa-btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+    .form-nexa-btn.primary {
+        background: #666666;
+        border: 1px solid #666666;
+        color: #fff;
+    }
+
+    .form-nexa-btn.primary:hover {
+        background: #555555;
+        border-color: #444444;
+    }
+
+    .form-nexa-btn.secondary {
+        background: #fff;
+        border: 1px solid #dee2e6;
+        color: #6c757d;
+    }
+
+    .form-nexa-btn.secondary:hover {
+        background: #f8f9fa;
+        border-color: #c5c9cd;
+    }
+
+    .form-nexa-btn:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-wizard-progress::before {
+            background: #2c3034;
+        }
+
+        .step-number {
+            background: #1a1d20;
+            border-color: #2c3034;
+            color: #adb5bd;
+        }
+
+        .step-text {
+            color: #adb5bd;
+        }
+
+        /* Active State - Dark */
+        .form-nexa-wizard-progress-step.active .step-number {
+            background: #666666;
+            border-color: #666666;
+            color: #fff;
+            box-shadow: 0 0 0 4px rgba(102, 102, 102, 0.25);
+        }
+
+        /* Completed State - Dark */
+        .form-nexa-wizard-progress-step.completed .step-number {
+            background: #1a1d20;
+            border-color: #666666; /* Mengganti dari #0d6efd */
+            color: #666666; /* Mengganti dari #0d6efd */
+        }
+
+        .form-nexa-btn.secondary {
+            background: #1a1d20;
+            border-color: #2c3034;
+            color: #adb5bd;
+        }
+
+        .form-nexa-btn.secondary:hover {
+            background: #2c3034;
+            border-color: #373b3e;
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 576px) {
+        .form-nexa-wizard-progress {
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            font-size: 1rem;
+        }
+
+        .step-text {
+            font-size: 0.75rem;
+        }
+
+        .form-nexa-wizard-progress::before,
+        .form-nexa-wizard-progress-step.completed::after {
+            top: 18px;
+        }
+
+        .form-nexa-wizard-buttons {
+            flex-direction: column;
+        }
+
+        .form-nexa-btn {
+            width: 100%;
+        }
+    }
+    
+    /* Search Option Styles */
+    .form-nexa-search {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-nexa-search-container {
+        position: relative;
+    }
+
+    .form-nexa-search-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border: 1px solid #e9ecef;
+        border-radius: 4px;
+        margin-top: 0.25rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: none;
+        z-index: 1000;
+    }
+
+    .form-nexa-search-container.active .form-nexa-search-dropdown {
+        display: block;
+    }
+
+    .form-nexa-search-items {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .form-nexa-search-item {
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+    }
+
+    .form-nexa-search-item:hover {
+        background: #f8f9fa;
+    }
+
+    .form-nexa-search-item i {
+        color: #6c757d;
+        font-size: 1rem;
+    }
+
+    /* Multiple Search Tags */
+    .form-nexa-search-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.375rem;
+        border: 1px solid #e9ecef;
+        border-radius: 4px;
+        background: #fff;
+    }
+
+    .form-nexa-search-tag {
+        background: #e9ecef;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .form-nexa-search-tag-remove {
+        cursor: pointer;
+        color: #6c757d;
+    }
+
+    .form-nexa-search-tag-remove:hover {
+        color: #dc3545;
+    }
+
+    .form-nexa-search-input-container {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .form-nexa-search-input {
+        border: none;
+        outline: none;
+        padding: 0.25rem;
+        width: 100%;
+        background: transparent;
+    }
+
+    /* No Results */
+    .form-nexa-search-no-results {
+        padding: 0.75rem 1rem;
+        color: #6c757d;
+        text-align: center;
+    }
+
+    /* Loading State */
+    .form-nexa-search-loading {
+        padding: 0.75rem 1rem;
+        text-align: center;
+        color: #6c757d;
+    }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+        .form-nexa-search-dropdown {
+            background: #1a1d20;
+            border-color: #2c3034;
+        }
+
+        .form-nexa-search-item:hover {
+            background: #2c3034;
+        }
+
+        .form-nexa-search-item i {
+            color: #adb5bd;
+        }
+
+        .form-nexa-search-tags {
+            background: #1a1d20;
+            border-color: #2c3034;
+        }
+
+        .form-nexa-search-tag {
+            background: #2c3034;
+            color: #e9ecef;
+        }
+
+        .form-nexa-search-tag-remove {
+            color: #adb5bd;
+        }
+
+        .form-nexa-search-tag-remove:hover {
+            color: #dc3545;
+        }
+
+        .form-nexa-search-input {
+            color: #e9ecef;
+        }
+
+        .form-nexa-search-no-results,
+        .form-nexa-search-loading {
+            color: #adb5bd;
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 576px) {
+        .form-nexa-search-tags {
+            padding: 0.25rem;
+        }
+
+        .form-nexa-search-tag {
+            font-size: 0.75rem;
+        }
+    }
+    /* Dark mode untuk file input */
+@media (prefers-color-scheme: dark) {
+    .form-nexa-file-input:hover + .form-nexa-file-label {
+        background-color: #252525;
+        border-color: #666666; /* Mengganti dari #2196f3 */
+    }
+    
+    .form-nexa-file-label.drag-active {
+        background-color: #2c3034; /* Mengganti dari #0d47a1 */
+    }
+}
+
+/* Dark mode untuk wizard completed state */
+@media (prefers-color-scheme: dark) {
+    .form-nexa-wizard-progress-step.completed .step-number {
+        background: #1a1d20;
+        border-color: #666666; /* Mengganti dari #0d6efd */
+        color: #666666; /* Mengganti dari #0d6efd */
+    }
+}
+
+/* Input border focus di dark mode */
+@media (prefers-color-scheme: dark) {
+    .form-nexa-control:focus {
+        border-color: #666666; /* Mengganti dari #fff */
+    }
+}
+
+/* Form input border di dark mode */
+@media (prefers-color-scheme: dark) {
+    .form-nexa-floating input:focus ~ label,
+    .form-nexa-floating input:not(:placeholder-shown) ~ label {
+        background: #2b3035;
+        color: #999999; /* Mengganti dari #e9ecef */
+    }
+}
+
+.form-nexa.form-error input:not([type="file"]),
+.form-nexa.form-error select,
+.form-nexa.form-error textarea {
+    border-color: #ff4444;
+}
+
+.form-nexa .error-message {
+    color: #ff4444;
+    font-size: 0.8em;
+    margin-top: 4px;
+}

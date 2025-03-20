@@ -1,0 +1,211 @@
+/* Styles untuk navigasi scrollspy */
+.scrollspy-nav {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #dee2e6;
+}
+
+/* Styles untuk link navigasi */
+.nx-nav-pills .nx-nav-link {
+  color: #6c757d;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover state untuk link navigasi */
+.nx-nav-pills .nx-nav-link:hover {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+/* Link aktif */
+.nx-nav-pills .nx-nav-link.active {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Container scrollspy */
+.scrollspy-example {
+  background-color: #fff;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Styles untuk section dalam scrollspy */
+.scrollspy-example section {
+  padding: 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.scrollspy-example section:last-child {
+  border-bottom: none;
+}
+
+/* Heading dalam section */
+.scrollspy-example h5 {
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+/* Paragraf dalam section */
+.scrollspy-example p {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar untuk scrollspy container */
+.scrollspy-example::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollspy-example::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.scrollspy-example::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.scrollspy-example::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animasi smooth untuk perubahan active state */
+.nx-nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scrollspy-nav {
+    margin-bottom: 1rem;
+  }
+  
+  .scrollspy-example {
+    height: 250px;
+  }
+} 
+
+/* Styles untuk scrollspy horizontal */
+.scrollspy-nav-horizontal {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #dee2e6;
+}
+
+.scrollspy-nav-horizontal .nx-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Styles untuk list group scrollspy */
+.nx-list-group-scrollspy {
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.nx-list-group-scrollspy .nx-list-group-item {
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.nx-list-group-scrollspy .nx-list-group-item.active {
+  border-left-color: #0d6efd;
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+/* Styles untuk offset scrollspy */
+.scrollspy-offset-example {
+  position: relative;
+  padding-top: 60px; /* Sesuaikan dengan tinggi navbar */
+}
+
+.scrollspy-offset-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+  z-index: 1020;
+}
+
+/* Pastikan container scrollspy memiliki ruang untuk offset */
+.scrollspy-offset-example .scrollspy-example {
+  margin-top: 10px;
+  height: calc(300px - 60px); /* Kurangi height dengan tinggi navbar */
+}
+
+/* Horizontal pills dalam navbar */
+.scrollspy-nav-horizontal .nx-nav-pills {
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0.5rem;
+}
+
+/* List group styles */
+.nx-list-group-scrollspy {
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.nx-list-group-item {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+  color: #495057;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.nx-list-group-item:last-child {
+  border-bottom: none;
+}
+
+.nx-list-group-item:hover {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.nx-list-group-item.active {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+
+/* Reset button styles */
+button.nx-nav-link,
+button.nx-list-group-item {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nx-nav-pills {
+    flex-wrap: wrap;
+  }
+  
+  .scrollspy-nav-horizontal .nx-nav-pills {
+    justify-content: center;
+  }
+} 
+
+.nx-nav-pills .nx-nav-link{
+    color: #495057 !important;
+}

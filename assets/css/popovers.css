@@ -1,0 +1,448 @@
+/* Gaya dasar popover */
+.nx-popover {
+  position: relative;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Tingkatkan z-index saat hover */
+.nx-popover:hover {
+  z-index: 9999;
+}
+
+.nx-popover .popover-content {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  background: white;
+  width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Posisi right dengan z-index */
+.nx-popover[data-position="right"] {
+  position: relative;
+  z-index: 1;
+}
+
+.nx-popover[data-position="right"]:hover {
+  z-index: 9999;
+}
+
+.nx-popover[data-position="right"] .popover-content {
+  top: 50%;
+  left: calc(100% + 10px);
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  z-index: 9999;
+}
+
+/* Hover area untuk right */
+.nx-popover[data-position="right"]::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: 100%;
+  width: 20px;
+  z-index: 9998;
+}
+
+/* Posisi popover */
+.nx-popover[data-position="top"] .popover-content {
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.nx-popover[data-position="bottom"] .popover-content {
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.nx-popover[data-position="left"] .popover-content {
+  top: 50%;
+  right: calc(100% + 10px);
+  left: auto;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+}
+
+/* Panah popover */
+.nx-popover[data-position] .popover-content::after {
+  content: '';
+  position: absolute;
+  border: 8px solid transparent;
+  z-index: 9998;
+}
+
+.nx-popover[data-position="top"] .popover-content::after {
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: white;
+}
+
+.nx-popover[data-position="right"] .popover-content::after {
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right-color: white;
+}
+
+.nx-popover[data-position="bottom"] .popover-content::after {
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-color: white;
+}
+
+.nx-popover[data-position="left"] .popover-content::after {
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left-color: white;
+}
+
+/* Hover state */
+.nx-popover:hover .popover-content {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+/* Tambahkan hover untuk popover content */
+.nx-popover .popover-content:hover {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+/* Tambahkan area hover */
+.nx-popover::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  z-index: 9997;
+}
+
+/* Header popover */
+.popover-header {
+  padding: 16px;
+  display: flex;
+  border-bottom: 1px solid #e4e6eb;
+}
+
+.popover-header .nx-avatar {
+  width: 60px;
+  height: 60px;
+  margin-right: 12px;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1c1e21;
+}
+
+.user-role {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #65676b;
+}
+
+/* Body popover */
+.popover-body {
+  padding: 12px 16px;
+}
+
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0 16px;
+  border-bottom: 1px solid #e4e6eb;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-weight: 600;
+  color: #1c1e21;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #65676b;
+}
+
+/* Avatar kecil */
+.nx-avatar-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Preview box */
+/*.preview-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 200px;
+  padding: 2rem;
+  gap: 20px;
+}*/
+
+/* Notification Popover */
+.notification-popover {
+  width: 320px;
+}
+
+.notification-popover .popover-header {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  background: #f8f9fa;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.notification-popover .popover-header h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.notification-popover .badge {
+  background: #1877f2;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+
+.notification-popover .popover-body {
+  padding: 0;
+}
+
+.notification-item {
+  display: flex;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e4e6eb;
+  transition: background-color 0.2s;
+  gap: 10px;
+}
+
+.notification-item:hover {
+  background-color: #f0f2f5;
+}
+
+.notification-item .nx-avatar-sm {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.notification-content {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.notification-content p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #1c1e21;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-time {
+  font-size: 0.7rem;
+  color: #65676b;
+  margin-top: 2px;
+}
+
+.popover-footer {
+  padding: 6px 12px;
+  text-align: center;
+  border-top: 1px solid #e4e6eb;
+  background: #f8f9fa;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.view-all {
+  color: #1877f2;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+/* Tooltip Styles */
+.nx-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.nx-tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 9999;
+}
+
+.nx-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 9998;
+}
+
+.nx-tooltip[data-tooltip-icon]::before {
+  content: attr(data-tooltip-icon) " " attr(data-tooltip);
+}
+
+.nx-tooltip:hover::before,
+.nx-tooltip:hover::after {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Menu Popover Styles */
+.menu-popover {
+  width: 120px;
+  padding: 8px 0;
+}
+
+.menu-item {
+  display: flex;
+  padding: 8px 16px;
+  color: #1c1e21;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+  gap: 12px;
+}
+
+.menu-item:hover {
+  background-color: #f0f2f5;
+}
+
+.menu-item i {
+  font-size: 1.1rem;
+  width: 16px;
+  text-align: center;
+  color: #65676b;
+  flex-shrink: 0;
+  margin-right: 0;
+}
+
+.menu-item span {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #1c1e21;
+  line-height: 1.2;
+}
+
+.menu-item.danger {
+  color: #dc3545;
+}
+
+.menu-item.danger i,
+.menu-item.danger span {
+  color: #dc3545;
+}
+
+.menu-divider {
+  height: 1px;
+  background-color: #e4e6eb;
+  margin: 8px 0;
+}
+
+/* Hover states untuk semua posisi */
+.nx-popover[data-position]:hover .popover-content {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+/* Reset padding dan margin global */
+.nx-popover .popover-content {
+  padding: 0;
+  margin: 0;
+}
+
+/* Hover area khusus untuk right dan left */
+.nx-popover[data-position="right"]::after,
+.nx-popover[data-position="left"]::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  width: 20px;
+  z-index: 9997;
+}
+
+.nx-popover[data-position="right"]::after {
+  left: 100%;
+}
+
+.nx-popover[data-position="left"]::after {
+  right: 100%;
+}
+
+
+body.dark-mode-grid .nx-popover {
+    color: var(--text-primary);
+}

@@ -1,0 +1,417 @@
+:root {
+    --bg-color: #ffffff;
+    --bg-card: #ffffff;
+    --bg-modal: #fff;
+    --text-color: #1a1a1a;
+    --text-dark: #333;
+    --text-color-tx: #1a1a1a;
+    --text-color-bx: #5d5858;
+    --text-color-bxh: #d3cdcd;
+    --header-bg: #20232a;
+    --header-text: #ffffff;
+    --sidebar-bg: #ffffff;
+    --border-color: #e6e6e6;
+    --link-color: #087ea4;
+    --active-link: #149eca;
+    --code-bg: #f6f8fa;
+    --info-bg: #fff8e6;
+    --info-border: #e7c000;
+    --sidebar-text: #666666;
+    --hover-bg: rgba(0, 0, 0, 0.05);
+    --docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f9f9);
+    --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff, 0 1px 2px 1px rgba(30,35,90,0.4);
+    --docsearch-muted-color: #666;
+    --code-bg: #2d2d2d;
+    --shortcut-bg: var(--docsearch-key-gradient);
+    --shortcut-shadow: var(--docsearch-key-shadow);
+    
+    --aside-bg: #ffffff;
+    --aside-text: #333333;
+    --aside-border: #e5e5e5;
+    --aside-link: #666666;
+    --aside-link-hover: #333333;
+    --aside-active: #0066cc;
+    
+    --main-bg: #ffffff;
+    --main-text: #333333;
+    --main-code-bg: #f5f5f5;
+    --main-code-text: #333333;
+    --main-link: #0066cc;
+    --main-link-hover: #004c99;
+    
+    --page-nav-bg: #ffffff;
+    --page-nav-text: #333333;
+    --page-nav-border: #e5e5e5;
+    --page-nav-link: #666666;
+    --page-nav-hover: #333333;
+    
+    --menu-hover-bg: #f6f8fa;
+    --menu-hover-text: #087ea4;
+    --menu-active-bg: #e6f3ff;
+    --menu-active-text: #087ea4;
+    
+    --scrollbar-thumb: #ccc;
+    --scrollbar-thumb-hover: #999;
+    --scrollbar-track: transparent;
+    
+    --nav-text: #1a1a1a;
+    --nav-hover-bg: #f6f8fa;
+    --nav-hover-text: #087ea4;
+    --nav-active-bg: #e6f3ff;
+    --nav-active-text: #087ea4;
+    --nav-subtext: #888888;
+    
+    --menu-text: #1a1a1a;
+    --menu-text-hover: #087ea4;
+    --menu-text-active: #087ea4;
+    --menu-subtext: #666;
+}
+
+.dark-mode-grid {
+    --bg-color: #1a1a1a;
+    --bg-card: #1e1e1e;    
+    --bg-modal: #1b1b1b;
+    --text-color: #ffffff;
+    --text-color-tx: #818181;
+    --sidebar-bg: #161616;
+    --border-color: #404040;
+    --code-bg: #2d2d2d;
+    --info-bg: #2d2d2d;
+    --info-border: #515151;
+    --sidebar-text: #999999;
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --link-color: #149eca;
+    --active-link: #149eca;
+    --nx-card-hover-shadow: 0 4px 8px rgb(108 108 108 / 15%);
+}
+
+.universal-grid {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-grid {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    line-height: 1.5 !important;
+}
+
+.nx-flex {
+    display: flex !important
+}
+
+.nx-logo small{
+    font-size:12px;
+}
+.nx-items-center {
+    align-items: center !important
+}
+
+/* Main Header */
+.nx-main-header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 21000;
+}
+
+.nx-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nx-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+}
+
+.nx-version {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.nx-main-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nx-nav-link {
+    color: var(--header-text);
+    text-decoration: none;
+    opacity: 0.8;
+   
+}
+
+.nx-nav-link:hover {
+    opacity: 1;
+}
+
+.nx-header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+    .menu-toggle-grid {
+        display: block;
+    }
+
+
+    .nx-main-header {
+        padding: 0.5rem;
+    }
+
+    .nx-header-left {
+        gap: 0.5rem;
+    }
+
+    .nx-logo svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nx-version {
+        font-size: 0.8rem;
+    }
+}
+
+/* Additional styles for extra small devices */
+@media (max-width: 480px) {
+
+    .nx-header-right {
+        gap: 0.5rem;
+    }
+
+    .nx-theme-toggle {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Tambahkan style untuk tombol theme */
+.nx-theme-toggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--header-text);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 32px;
+    height: 32px;
+}
+
+.nx-theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nx-theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Hide/show icons based on theme */
+.nx-theme-toggle .nx-sun-icon {
+    display: none;
+}
+
+.nx-theme-toggle .nx-moon-icon {
+    display: block;
+}
+
+.dark-mode-grid .nx-theme-toggle .nx-sun-icon {
+    display: block;
+}
+
+.dark-mode-grid .nx-theme-toggle .nx-moon-icon {
+    display: none;
+}
+
+/* Tambahkan style untuk scrollbar di bagian bawah file CSS */
+
+
+
+
+body.dark-mode-grid {
+  --bg-primary: #1a1a1a;
+  --text-primary: #ffffff;
+  --border-primary: #404040;
+  --docsearch-muted-color: #888;
+  --shortcut-bg: linear-gradient(-225deg, #3f3f3f, #2d2d2d);
+  --shortcut-shadow: inset 0 -2px 0 0 #404040, inset 0 0 1px 1px #2d2d2d, 0 1px 2px 1px rgba(0,0,0,0.4);
+  
+  --aside-bg: #2a2a2a;
+  --aside-text: #ffffff;
+  --aside-border: #404040;
+  --aside-link: #888888;
+  --aside-link-hover: #ffffff;
+  --aside-active: #3399ff;
+  
+  --main-bg: #1a1a1a;
+  --main-text: #ffffff;
+  --main-code-bg: #2d2d2d;
+  --main-code-text: #ffffff;
+  --main-link: #3399ff;
+  --main-link-hover: #66b3ff;
+  
+  --page-nav-bg: #1a1a1a;
+  --page-nav-text: #ffffff;
+  --page-nav-border: #404040;
+  --page-nav-link: #888888;
+  --page-nav-hover: #ffffff;
+  
+  --menu-hover-bg: #333333;
+  --menu-hover-text: #3399ff;
+  --menu-active-bg: #404040;
+  --menu-active-text: #3399ff;
+  
+  --scrollbar-thumb: #444;
+  --scrollbar-thumb-hover: #666;
+  --scrollbar-track: #2a2a2a;
+  
+  --menu-text: #ffffff;
+  --menu-text-hover: #3399ff;
+  --menu-text-active: #3399ff;
+  --menu-subtext: #888888;
+}
+
+body.dark-mode-grid {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.dark-mode-grid .nx-main-header {
+  background-color: #242424;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+
+
+body.dark-mode-grid .nx-search-box {
+  background: #2a2a2a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+body.dark-mode-grid .nx-search-box input {
+  color: var(--text-primary);
+}
+
+
+body.dark-mode-grid .nx-nav-link {
+  color: var(--text-primary);
+}
+
+body.dark-mode-grid .nx-shortcut {
+  background: var(--shortcut-bg);
+  box-shadow: var(--shortcut-shadow);
+  color: var(--text-primary);
+}
+
+body.dark-mode-grid .nx-shortcut svg {
+  stroke: var(--text-primary);
+}
+
+body.dark-mode-grid .nx-logo,
+body.dark-mode-grid .nx-version {
+  color: var(--text-primary) !important;
+}
+
+
+
+body.dark-mode-grid main,
+body.dark-mode-grid .main-content {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+}
+
+body.dark-mode-grid .copy-button {
+  background-color: #333;
+  color: #fff;
+  border-color: #444;
+}
+
+
+
+body.dark-mode-grid a {
+  color: var(--main-link);
+}
+
+body.dark-mode-grid a:hover {
+  color: var(--main-link-hover);
+}
+
+body.dark-mode-grid .nx-card-borderless {
+    box-shadow: 0 4px 6px -1px rgb(159 159 159 / 10%);
+}
+
+body.dark-mode-grid .nx-card-glass {
+    box-shadow: 0 8px 32px rgb(91 91 91 / 10%)
+}
+
+.nx-search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.nx-search-icon {
+  color: #666;
+  margin-right: 8px;
+}
+
+.nx-search-input {
+  background: transparent;
+  border: none;
+  color: #666;
+  outline: none;
+  width: 200px;
+}
+
+.nx-search-input::placeholder {
+  color: #666;
+}
+
+.nx-shortcut-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.nx-shortcut {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.nx-shortcut.nx-ctrl {
+  font-size: 11px;
+} 
+
+.fa-github {
+  color: #fff;
+}
+.fa-github:hover a i{
+  color: #fff;
+}

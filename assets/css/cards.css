@@ -1,0 +1,633 @@
+
+
+
+/* Base Card Styles */
+.nx-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--nx-card-bg);
+  border: 1px solid var(--nx-card-border-color);
+  border-radius: var(--nx-card-border-radius);
+  margin-bottom: 1rem;
+}
+
+.nx-card-header {
+  padding: var(--nx-card-spacing);
+  border-bottom: 1px solid var(--nx-card-border-color);
+  background-color: rgb(0 0 0 / 0%);
+}
+
+.nx-card-body {
+  padding: var(--nx-card-spacing);
+  flex: 1 1 auto;
+}
+
+.nx-card-footer {
+  padding: var(--nx-card-spacing);
+  border-top: 1px solid var(--nx-card-border-color);
+  background-color: rgb(0 0 0 / 0%);
+}
+
+.nx-card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.nx-card-text {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Card Variants */
+.nx-card-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  border: none;
+  color: white;
+}
+
+.nx-card-gradient .nx-card-title,
+.nx-card-gradient .nx-card-text {
+  color: white;
+  opacity: 0.9;
+}
+
+.nx-card-floating {
+  border: none;
+  box-shadow: var(--nx-card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nx-card-floating:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--nx-card-hover-shadow);
+}
+
+.nx-card-borderless {
+  border: none;
+  background: #f8fafc;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nx-card-borderless .nx-card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.nx-card-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Groups */
+.nx-card-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.nx-card-group .nx-card {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Card dengan Image */
+.nx-card-img-top {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: calc(var(--nx-card-border-radius) - 1px);
+  border-top-right-radius: calc(var(--nx-card-border-radius) - 1px);
+}
+
+/* Horizontal Card */
+.nx-card-horizontal {
+  flex-direction: row;
+}
+
+
+.nx-card-horizontal .nx-card-side {
+  flex: 0 0 33.333333%;
+}
+
+.nx-card-horizontal .nx-card-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: calc(var(--nx-card-border-radius) - 1px);
+}
+
+/* Interactive Cards */
+.nx-card-flip {
+  perspective: 1000px;
+  height: 200px;
+}
+
+.nx-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.nx-card-flip:hover .nx-card-inner {
+  transform: rotateY(180deg);
+}
+
+.nx-card-front,
+.nx-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--nx-card-border-radius);
+}
+
+.nx-card-back {
+  transform: rotateY(180deg);
+  background-color: #4f46e5;
+  color: white;
+}
+
+/* Style untuk teks dalam card interaktif */
+.nx-card-back .nx-card-title,
+.nx-card-back .nx-card-text {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.nx-card-back .nx-card-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.nx-card-back .nx-card-text {
+  opacity: 0.95;
+}
+
+/* Style untuk card front */
+.nx-card-front {
+  background-color: var(--nx-card-bg);
+}
+
+/* Style untuk card back */
+.nx-card-back {
+  transform: rotateY(180deg);
+  background-color: #4f46e5;
+}
+
+.nx-card-back .nx-card-title,
+.nx-card-back .nx-card-text,
+.nx-card-back .nx-card-body {
+  color: white !important;
+}
+
+.nx-card-back .nx-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Card dengan Overlay */
+.nx-card-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.nx-card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: var(--nx-card-spacing);
+  background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 1;
+}
+
+/* Style khusus untuk teks dalam overlay */
+.nx-card-overlay .nx-card-title {
+  color: #ffffff !important;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.nx-card-overlay .nx-card-text {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Efek hover untuk card overlay */
+.nx-card-overlay:hover .nx-card-img-overlay {
+  background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+}
+
+/* Card List Style */
+.nx-card-list .nx-card-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--nx-primary);
+  padding: 1rem;
+}
+
+/* Card Expandable */
+.nx-card-expandable .nx-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nx-card-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Card Grid */
+.nx-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Untuk card dengan background gelap */
+.nx-card-gradient .nx-card-text,
+.nx-card-overlay .nx-card-text {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Untuk card dengan background terang */
+.nx-card-floating .nx-card-text,
+.nx-card-borderless .nx-card-text,
+.nx-card-glass .nx-card-text {
+  color: var(--text-color-bx);
+}
+
+/* Untuk card dengan list style */
+.nx-card-list .nx-card-text {
+  color: var(--text-color-bx);
+  margin-bottom: 0.5rem;
+}
+
+/* Untuk card dengan hover effect */
+.nx-card-floating:hover .nx-card-text {
+  color: var(--text-color-bxh);
+}
+
+/* Untuk card dengan background gelap */
+.nx-card-gradient .nx-card-title,
+.nx-card-overlay .nx-card-title {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+
+/* Untuk card dengan background terang */
+.nx-card-floating .nx-card-title,
+.nx-card-borderless .nx-card-title,
+.nx-card-glass .nx-card-title {
+  color: var(--text-color-tx);
+  font-weight: 600;
+}
+
+/* Untuk card dengan list style */
+.nx-card-list .nx-card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary)
+}
+
+/* Untuk card dengan hover effect */
+.nx-card-floating:hover .nx-card-title {
+  color: var(--text-primary);
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+
+/* Untuk card dengan expandable */
+.nx-card-expandable .nx-card-title {
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+/* Untuk card dengan grid */
+.nx-card-grid .nx-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Card Groups */
+  .nx-card-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Card Grid */
+  .nx-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Horizontal Cards */
+  .nx-card-horizontal {
+    flex-direction: column;
+  }
+
+  .nx-card-horizontal .nx-card-side {
+    flex: 0 0 200px;
+  }
+
+  .nx-card-horizontal .nx-card-side img {
+    border-top-right-radius: calc(var(--nx-card-border-radius) - 1px);
+    border-bottom-left-radius: 0;
+  }
+
+  /* Card dengan Gambar */
+  .nx-card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  
+  /* Table Responsive */
+  .nx-table-responsive {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+    overflow-x: auto;
+  }
+
+  /* Card Title dan Text */
+  .nx-card-title {
+    font-size: 1.1rem;
+  }
+
+  .nx-card-text {
+    font-size: 0.9rem;
+  }
+
+  /* Card Flip */
+  .nx-card-flip {
+    height: 250px;
+  }
+}
+
+/* Untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .nx-card-body {
+    padding: 1rem;
+  }
+
+  .nx-card-header,
+  .nx-card-footer {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Card Groups dan Grid dengan margin yang lebih kecil */
+  .nx-card-group,
+  .nx-card-grid {
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Mengatur ukuran gambar untuk mobile */
+  .nx-card-img-top,
+  .nx-card-horizontal .nx-card-side {
+    height: 180px;
+  }
+
+
+}
+
+/* Status Cards */
+.nx-card-status {
+  position: relative;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nx-status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Status Variants */
+.nx-status-success {
+  border-left-color: #10b981;
+}
+
+.nx-status-warning {
+  border-left-color: #f59e0b;
+}
+
+.nx-status-error {
+  border-left-color: #ef4444;
+}
+
+.nx-status-info {
+  border-left-color: #3b82f6;
+}
+
+.nx-status-success .nx-status-indicator {
+  background-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.nx-status-warning .nx-status-indicator {
+  background-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.nx-status-error .nx-status-indicator {
+  background-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.nx-status-info .nx-status-indicator {
+  background-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+
+
+/* Tabbed Cards */
+.nx-card-tabs .nx-tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid var(--nx-card-border-color);
+  gap: 1rem;
+}
+
+.nx-tabs li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  color: #6b7280;
+}
+
+.nx-tabs li:hover {
+  color: #4f46e5;
+}
+
+.nx-tabs li.active {
+  border-bottom-color: #4f46e5;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+.nx-tab-content {
+  display: none;
+  padding: 1rem 0;
+}
+
+.nx-tab-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Timeline Cards */
+.nx-card-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.nx-card-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #e5e7eb 0%, #6366f1 100%);
+}
+
+.nx-card-timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.nx-timeline-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #6366f1;
+  border-radius: 50%;
+  position: absolute;
+  left: -2.3rem;
+  top: 1.5rem;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px #6366f1;
+  transition: all 0.3s ease;
+}
+
+.nx-card-timeline-item:hover {
+  transform: translateX(5px);
+}
+
+.nx-card-timeline-item:hover .nx-timeline-dot {
+  transform: scale(1.2);
+  background-color: #4f46e5;
+}
+
+/* Hover Effects */
+.nx-card-status:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nx-card-progress:hover .nx-progress-bar {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .nx-card-timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .nx-timeline-dot {
+    left: -1.8rem;
+  }
+  
+  .nx-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .nx-tabs li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+
+
+
+body.dark-mode-grid .nx-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #212121;
+    border: 1px solid #383838;
+    border-radius: var(--nx-card-border-radius);
+    margin-bottom: 1rem;
+}
+body.dark-mode-grid .nx-card-horizontal {
+  flex-direction: row;
+}
+body.dark-mode-grid .nx-card-front .nx-card-body .nx-card-title,
+body.dark-mode-grid .nx-card-front .nx-card-body .nx-card-text{ 
+  color: #333;
+}
+body.dark-mode-grid .nx-card-grid .nx-card-title {
+    color: var(--text-primary);
+}

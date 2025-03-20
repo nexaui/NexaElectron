@@ -1,0 +1,96 @@
+{
+  "name": "eletron3",
+  "version": "1.0.6",
+  "description": "Nexa Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development nodemon --exec electron .",
+    "clean": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && electron-builder",
+    "deploy": "electron-builder build --win --publish always",
+    "postinstall": "electron-builder install-app-deps",
+    "postbuild": "node scripts/copy-server.js && node scripts/copy-oauth.js",
+    "check-server": "node scripts/check-server.js"
+  },
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/nexa-app"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "electron-is-dev": "^2.0.0",
+    "express": "^4.18.2",
+    "html5-qrcode": "^2.3.8",
+    "jquery": "^3.7.1",
+    "jquery-ui": "^1.14.1",
+    "jsdom": "^22.1.0",
+    "node-fetch": "^2.6.7",
+    "portfinder": "^1.0.32",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.33.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1",
+    "electron-reloader": "^1.2.3",
+    "fs-extra": "^11.3.0",
+    "nodemon": "^3.0.2",
+    "rimraf": "^5.0.1"
+  },
+  "build": {
+    "appId": "com.nexa2.app",
+    "productName": "Nexa App",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/*.ts",
+      "!*.code-workspace",
+      "!LICENSE.md",
+      "!package.json",
+      "!package-lock.json",
+      "!src/",
+      "!e2e/",
+      "!hooks/",
+      "!.angular",
+      "!.vscode",
+      "!.editorconfig",
+      "!.gitignore",
+      "!readme.md"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/brand/logo.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "extraResources": [
+      {
+        "from": "public",
+        "to": "server/public"
+      },
+      {
+        "from": "assets",
+        "to": "server/assets"
+      },
+      {
+        "from": "package",
+        "to": "server/package"
+      }
+    ]
+  }
+}

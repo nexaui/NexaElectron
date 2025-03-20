@@ -1,0 +1,96 @@
+.nx-sticky {
+  position: sticky;
+  z-index: 100;
+}
+
+/* Sticky Left & Right */
+.nx-sticky-left {
+  position: sticky;
+  left: 0;
+  float: left;
+}
+
+.nx-sticky-right {
+  position: sticky;
+  right: 0;
+  float: right;
+}
+
+.sticky-wrapper {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+.content-middle {
+  flex: 1;
+  min-width: 500px;
+  padding: 20px;
+  background: var(--bg-color);
+}
+
+/* Container Demo */
+.sticky-container-demo {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.demo-content {
+  height: 600px;
+  padding: 20px;
+  background: #f8f8f8;
+}
+
+/* Z-Index Demo */
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+/* Responsive Sticky */
+@media (max-width: 768px) {
+  .nx-sticky-responsive {
+    position: static;
+  }
+}
+
+/* Demo Styling */
+.demo-sticky {
+  height: 200px;
+  overflow-y: auto;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.demo-sticky-horizontal {
+  overflow-x: auto;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.sticky-content {
+  background: var(--bg-color);
+  padding: 15px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body.dark-mode-grid .sticky-content {
+  box-shadow: 0 2px 4px rgb(123 123 123 / 10%)
+}
+
+
+
+/* Animasi */
+.nx-sticky.is-sticky {
+  transition: all 0.3s ease;
+}

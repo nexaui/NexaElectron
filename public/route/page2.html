@@ -1,0 +1,30 @@
+<h1>page2</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod enim quae reiciendis nemo, omnis veniam, dolores beatae pariatur molestiae consectetur dolorum perferendis sit, provident architecto modi dolorem. Molestias, dolorum, illum!</p>
+<div require="exsampel/lorem"></div>
+<input
+  type="search"
+  id="searchInput"
+  class="form-control"
+  placeholder="Search..."
+  value=""
+  required="required"
+  title=""
+/>
+
+<div id="pageInfo" class="page-info">
+  Showing page <span id="currentPage">0</span> of
+  <span id="totalPages">0</span> (<span id="totalItems">0</span> items)
+</div>
+<div class="row" id="row" NexaDom>
+ <div class="nx-col-6">
+   <a href="/exsampel/page/route/page4/n/{row.title|slug}"> <h3>{row.id}</h3></a>
+  <h3>{row.title|upper}</h3>
+  <p>{row.updated_at}</p>
+ </div>
+</div>
+<div id="pagination"></div>
+<hr>
+
+<script src="/package/dom/NexaDom.js"></script>
+
+

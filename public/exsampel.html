@@ -1,0 +1,68 @@
+  <meta name="twitter:description" content="Berkreasi! Dengan fokus pada HTML, CSS,JS ">
+    <style>
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+      nav ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+      }
+      nav ul li {
+        padding: 10px 15px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #0066cc;
+      }
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+      #page-content {
+        min-height: 400px;
+        padding: 20px;
+        margin-top: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body data-nexakey>
+    <div class="container">
+      <h1>NexaExpress SPA Demo</h1>
+
+      <nav>
+        <ul>
+          <li><a href="/exsampel/list/route/page1">Halaman 1</a></li>
+          <li>
+            <a href="/exsampel/list/route/page2" class="spa-link">Halaman 2</a>
+          </li>
+          <li>
+            <a href="/exsampel/list/route/page3/n/daadada/addad">Halaman 3</a>
+          </li>
+          <li>
+            <a href="/exsampel/list/exsampel/NexaDom" class="spa-link"
+              >NexaDom</a
+            >
+          </li>
+          <li>
+            <a href="/exsampel/list/exsampel/NexaKey" class="spa-link"
+              >NexaKey</a
+            >
+          </li> 
+          <li>
+            <a href="/exsampel/list/exsampel/NexaVars" class="spa-link"
+              >NexaVars</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div id="page-content"></div>
+    </div>
+    <script type="module" src="/package/navigation.js"></script>

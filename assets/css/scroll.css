@@ -1,0 +1,93 @@
+/* Scroll Dasar */
+.nx-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Scroll Horizontal */
+.nx-scroll-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+/* Styling Scrollbar */
+.nx-scroll::-webkit-scrollbar,
+.nx-scroll-x::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.nx-scroll::-webkit-scrollbar-track,
+.nx-scroll-x::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.nx-scroll::-webkit-scrollbar-thumb,
+.nx-scroll-x::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.nx-scroll::-webkit-scrollbar-thumb:hover,
+.nx-scroll-x::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom Scroll Styles */
+.nx-scroll-rounded::-webkit-scrollbar {
+  width: 12px;
+}
+
+.nx-scroll-rounded::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.nx-scroll-rounded::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 10px;
+  border: 3px solid #f0f0f0;
+}
+
+.nx-scroll-rounded::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Hidden Scrollbar */
+.nx-scroll-hidden {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;     /* Firefox */
+  overflow-y: auto;
+}
+
+.nx-scroll-hidden::-webkit-scrollbar {
+  width: 0 !important;
+  display: none !important;  /* Chrome, Safari and Opera */
+}
+
+/* Auto Hide Scroll */
+.nx-scroll-autohide {
+  overflow-y: auto;
+}
+
+.nx-scroll-autohide::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.nx-scroll-autohide::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nx-scroll-autohide:hover::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.5);
+}
+
+.nx-scroll-autohide:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(136, 136, 136, 0.8);
+}

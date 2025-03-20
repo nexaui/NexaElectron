@@ -1,0 +1,211 @@
+
+.nx-breadcrumb {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.nx-breadcrumb-item {
+    display: flex;
+    align-items: center;
+    color: #6c757d;
+}
+
+.nx-breadcrumb-item:not(:last-child)::after {
+    content: "/";
+    margin: 0 8px;
+    color: #6c757d;
+}
+
+.nx-breadcrumb-item a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.nx-breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.nx-breadcrumb-item.active {
+    color: #212529;
+}
+
+/* Variasi Warna */
+.nx-breadcrumb.dark {
+    background-color: #343a40;
+}
+
+.nx-breadcrumb.dark .nx-breadcrumb-item {
+    color: #fff;
+}
+
+.nx-breadcrumb.dark .nx-breadcrumb-item a {
+    color: #9ec5fe;
+}
+
+/* Custom Separator */
+.nx-breadcrumb.separator-arrow .nx-breadcrumb-item:not(:last-child)::after {
+    content: "→";
+    margin: 0 8px;
+}
+
+/* Ukuran */
+.nx-breadcrumb.small {
+    font-size: 0.875rem;
+    padding: 4px 12px;
+}
+
+.nx-breadcrumb.large {
+    font-size: 1.25rem;
+    padding: 12px 20px;
+}
+
+/* Variasi Warna */
+.nx-breadcrumb.primary {
+    background-color: #0d6efd;
+}
+
+.nx-breadcrumb.primary .nx-breadcrumb-item,
+.nx-breadcrumb.primary .nx-breadcrumb-item a {
+    color: #fff;
+}
+
+.nx-breadcrumb.success {
+    background-color: #198754;
+}
+
+.nx-breadcrumb.success .nx-breadcrumb-item,
+.nx-breadcrumb.success .nx-breadcrumb-item a {
+    color: #fff;
+}
+
+/* Breadcrumb dengan Icon */
+.nx-breadcrumb-item i {
+    margin-right: 5px;
+}
+
+/* Breadcrumb dengan Background Gradient */
+.nx-breadcrumb.gradient {
+    background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+}
+
+.nx-breadcrumb.gradient .nx-breadcrumb-item,
+.nx-breadcrumb.gradient .nx-breadcrumb-item a {
+    color: #fff;
+}
+
+/* Breadcrumb dengan Border */
+.nx-breadcrumb.bordered {
+    border: 1px solid #dee2e6;
+    background-color: transparent;
+}
+
+/* Breadcrumb dengan Shadow */
+.nx-breadcrumb.shadow {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Breadcrumb Rounded */
+.nx-breadcrumb.rounded-pill {
+    border-radius: 50rem;
+}
+
+/* Breadcrumb dengan Hover Effect */
+.nx-breadcrumb.hover-effect .nx-breadcrumb-item a:hover {
+    color: #0a58ca;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+/* Breadcrumb Responsive */
+@media (max-width: 576px) {
+    .nx-breadcrumb.responsive {
+        flex-wrap: wrap;
+    }
+    
+    .nx-breadcrumb.responsive .nx-breadcrumb-item {
+        margin: 2px 0;
+    }
+}
+
+/* Modern Breadcrumb Styles */
+.nx-breadcrumb.modern {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(231, 231, 231, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nx-breadcrumb.modern .nx-breadcrumb-item:not(:last-child)::after {
+    content: "›";
+    font-size: 1.2em;
+    margin: 0 10px;
+    color: #9ca3af;
+}
+
+/* Floating Style */
+.nx-breadcrumb.floating {
+    position: relative;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nx-breadcrumb.floating:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Minimal Style */
+.nx-breadcrumb.minimal {
+    background: none;
+    padding: 8px 0;
+}
+
+.nx-breadcrumb.minimal .nx-breadcrumb-item:not(:last-child)::after {
+    content: "•";
+    font-weight: bold;
+    color: #d1d5db;
+}
+
+/* Neumorphism Style */
+.nx-breadcrumb.neumorphic {
+    background: #f0f0f0;
+    box-shadow: 5px 5px 10px #d9d9d9, 
+                -5px -5px 10px #ffffff;
+    border: none;
+}
+
+/* Animated Separator */
+.nx-breadcrumb.animated .nx-breadcrumb-item:not(:last-child)::after {
+    content: "→";
+    transition: transform 0.2s;
+}
+
+.nx-breadcrumb.animated:hover .nx-breadcrumb-item:not(:last-child)::after {
+    transform: translateX(3px);
+}
+
+/* Card Style */
+.nx-breadcrumb.card-style {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+                0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.nx-breadcrumb.card-style .nx-breadcrumb-item a {
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.nx-breadcrumb.card-style .nx-breadcrumb-item a:hover {
+    background-color: #f3f4f6;
+    text-decoration: none;
+}

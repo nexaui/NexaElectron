@@ -1,0 +1,118 @@
+
+.nx-collapse {
+  display: none;
+}
+
+.nx-collapse.show {
+  display: block;
+}
+
+.nx-collapse-btn {
+  cursor: pointer;
+  padding: 10px 15px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: left;
+}
+
+.nx-collapse-btn:hover {
+  background: #e5e5e5;
+}
+
+.nx-collapse-content {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Style untuk Accordion */
+.nx-accordion-item {
+  margin-bottom: 5px;
+}
+
+/* Style untuk Custom Collapse */
+.nx-custom-collapse-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+}
+
+.nx-custom-collapse-content {
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Style untuk Animated Collapse */
+.nx-collapse.animated {
+  transition: all 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.nx-collapse.animated.show {
+  max-height: 500px;
+}
+
+/* Style untuk Nested Collapse */
+.nx-nested-collapse {
+  margin-left: 20px;
+}
+
+/* Custom Style Variants */
+.nx-collapse-btn.nx-primary {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+.nx-collapse-btn.nx-success {
+  background: #28a745;
+  color: white;
+  border: none;
+}
+
+.nx-collapse-btn.nx-danger {
+  background: #dc3545;
+  color: white;
+  border: none;
+}
+
+.nx-collapse-btn.nx-warning {
+  background: #ffc107;
+  color: #000;
+  border: none;
+}
+
+.nx-collapse-btn.nx-info {
+  background: #17a2b8;
+  color: white;
+  border: none;
+}
+
+/* Custom Content Styles */
+.nx-collapse-content.nx-bordered {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nx-collapse-content.nx-rounded {
+  border-radius: 15px;
+/*  background: #f8f9fa;*/
+}
+
+.nx-collapse-content.nx-shadow {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: none;
+}
+
+body.dark-mode-grid .nx-collapse-content.nx-shadow {
+  box-shadow: 0 4px 6px rgb(224 224 224 / 10%)
+}

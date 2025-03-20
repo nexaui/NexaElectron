@@ -1,0 +1,85 @@
+    .terminal {
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: monospace;
+      margin: 0px 0;
+      margin-bottom: 10px;
+    }
+
+    .terminal-header {
+      background-color: #2d2d2d;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .terminal-copy-btn {
+      background: transparent;
+      border: 1px solid #666;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .terminal-content {
+      padding: 12px;
+      color: white;
+      line-height: 1.5;
+    }
+
+    .terminal-code-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: #2d2d2d;
+      color: #e06c75;
+      border: none;
+      border-top: 1px solid #3d3d3d;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .terminal-code-btn:hover {
+      background: #3d3d3d;
+    }
+
+    /* Warna ikon bahasa pemrograman */
+    .terminal-header .fa-html5 {
+      color: #e34f26;
+    }
+    .terminal-header .fa-css3-alt {
+      color: #264de4;
+    }
+    .terminal-header .fa-js {
+      color: #f7df1e;
+    }
+    .terminal-header .fa-python {
+      color: #3776ab;
+    }
+    .terminal-header .fa-php {
+      color: #777bb4;
+    }
+    .terminal-header .fa-java {
+      color: #007396;
+    }
+    .terminal-header .fa-react {
+      color: #61dafb;
+    }
+    .terminal-header .fa-vuejs {
+      color: #4fc08d;
+    }
+    .terminal-header .fa-angular {
+      color: #dd0031;
+    }
+    .terminal-header .fa-node-js {
+      color: #339933;
+    }
+    .terminal-header .fa-sass {
+      color: #cc6699;
+    }

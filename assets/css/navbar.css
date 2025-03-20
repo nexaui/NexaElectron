@@ -1,0 +1,150 @@
+
+body.dark-mode-grid .search-box {
+  background: #2a2a2a;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+body.dark-mode-grid .search-box input {
+  color: var(--text-primary);
+} 
+
+  .nx-nav-search {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+
+
+    .nx-nav-search.active {
+      display: flex;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background-color: inherit;
+    }
+
+    .nx-search-container {
+      width: 100%;
+    }
+
+/* Menu dengan Pencarian */
+.nx-menu .search-box {
+  position: relative;
+  margin: 0 1rem;
+}
+
+.nx-menu .search-input {
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  width: 200px;
+}
+
+.nx-menu .search-icon {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.search-icon {
+  color: #666;
+  margin-right: 8px;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: #666;
+  outline: none;
+  width: 150px;
+}
+
+.search-input::placeholder {
+  color: #666;
+}
+
+
+.material-icons {
+    font-size: 24px;
+    user-select: none;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.shortcut-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.shortcut {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.shortcut.ctrl {
+  font-size: 11px;
+} 
+
+/*.nexa-nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    transition: background-color .3s, color .3s;
+}*/
+
+.nexa-nav-link {
+  color: var(--nav-link-color);
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 0.375rem;
+}
+
+.nexa-nav-link:hover {
+  color: var(--nav-link-hover-color);
+/*  background-color: #f7fafc;*/
+  text-decoration: none;
+}
+
+.nx-navbar-dark .nx-nav-brand, .nx-navbar-dark .nexa-nav-link {
+    color: rgba(255, 255, 255, .9);
+}
+.nx-navbar-dark .nexa-nav-link:hover {
+    background-color: rgba(255, 255, 255, .1);
+    color: #fff;
+}

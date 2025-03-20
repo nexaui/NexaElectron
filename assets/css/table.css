@@ -1,0 +1,446 @@
+:root {
+  --nx-white: #ffffff;
+  --nx-gray-25: #f8f9fa;
+  --nx-gray-50: #f3f4f6;
+  --nx-gray-75: #e5e7eb;
+  --nx-gray-600: #4b5563;
+  --nx-gray-700: #374151;
+  --nx-text-primary: #1f2937;
+  --nx-primary-dark: #2563eb;
+}
+
+/* Style dasar untuk tabel */
+.nx-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background-color: var(--nx-white);
+  border: 1px solid var(--nx-gray-75);
+}
+
+/* Style untuk header tabel */
+thead {
+  background-color: var(--nx-gray-25);
+}
+
+th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid var(--nx-gray-75);
+  color: var(--nx-text-primary);
+}
+
+/* Style untuk sel tabel */
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--nx-gray-75);
+  color: var(--nx-text-primary);
+}
+
+/* Style untuk baris terakhir */
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Style untuk kolom pertama */
+td:first-child {
+  font-weight: 500;
+  color: var(--nx-gray-700);
+}
+
+/* Style untuk tabel dengan border */
+.nx-table-bordered th,
+.nx-table-bordered td {
+  border: 1px solid var(--nx-gray-75);
+}
+
+/* Style untuk tabel bergaris */
+.nx-table-striped tbody tr:nth-child(odd) {
+  background-color: var(--nx-gray-25);
+}
+
+/* Style untuk tabel responsif */
+.nx-table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Style untuk tabel compact */
+.nx-table-compact th,
+.nx-table-compact td {
+  padding: 8px 12px;
+}
+
+/* Style untuk tabel dokumentasi */
+.nx-table-docs {
+  border: 1px solid var(--nx-gray-75);
+}
+
+.nx-table-docs td:first-child {
+  width: 200px;
+}
+
+/* Hover Effect */
+.nx-table-hover tbody tr:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* Header Berwarna */
+.nx-table-header-primary thead {
+  background-color: var(--nx-primary);
+  color: white;
+}
+
+/* Ukuran Tabel */
+.nx-table-sm td,
+.nx-table-sm th {
+  padding: 0.3rem;
+}
+
+.nx-table-lg td,
+.nx-table-lg th {
+  padding: 1rem;
+}
+
+/* Status Rows */
+.nx-table-success {
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.nx-table-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.nx-table-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Pagination */
+.nx-table-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.nx-pagination-numbers {
+  display: flex;
+  gap: 0.25rem;
+}
+
+/* Sortable Table */
+.nx-table-sortable th.sortable {
+  cursor: pointer;
+  position: relative;
+}
+
+.nx-table-sortable th.sortable:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+.nav-group {
+  font-weight: 600;
+  color: var(--nx-gray-600);
+  padding: 0.5rem 0 0.25rem 0;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Filter */
+.nx-table-filter {
+  margin-bottom: 1rem;
+}
+
+.nx-table-filter .nx-input {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Selectable */
+.nx-table-selectable th:first-child,
+.nx-table-selectable td:first-child {
+  width: 40px;
+  text-align: center;
+}
+
+/* Nested Table */
+.nx-table-nested .nested-row {
+  background-color: var(--nx-gray-50);
+}
+
+.nx-table-nested .nested-row.hidden {
+  display: none;
+}
+
+.toggle-nested {
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+}
+
+/* Custom Table */
+.nx-table-custom .product-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nx-table-custom .product-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.nx-table-custom .product-name {
+  font-weight: 500;
+}
+
+.nx-table-custom .product-category {
+  font-size: 0.875rem;
+  color: var(--nx-gray-600);
+}
+
+.nx-table-custom .action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+
+/* Tabel Mode Gelap */
+body.dark-mode-grid .nx-table {
+  background-color: var(--bg-primary);
+  border-color: var(--border-primary);
+}
+
+body.dark-mode-grid .nx-table thead {
+  background-color: var(--main-code-bg);
+}
+
+body.dark-mode-grid .nx-table th,
+body.dark-mode-grid .nx-table td {
+  color: var(--text-primary) !important;
+  border-color: var(--border-primary);
+}
+
+/* Tabel Bergaris */
+body.dark-mode-grid .nx-table-striped tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Hover Effect */
+body.dark-mode-grid .nx-table-hover tbody tr:hover {
+  background-color: var(--menu-hover-bg);
+}
+
+/* Header Berwarna */
+body.dark-mode-grid .nx-table-header-primary thead {
+  background-color: var(--aside-active);
+  color: var(--text-primary);
+}
+
+/* Status Rows */
+body.dark-mode-grid .nx-table-success {
+  background-color: rgba(40, 167, 69, 0.15);
+}
+
+body.dark-mode-grid .nx-table-warning {
+  background-color: rgba(255, 193, 7, 0.15);
+}
+
+body.dark-mode-grid .nx-table-danger {
+  background-color: rgba(220, 53, 69, 0.15);
+}
+
+/* Nested Table */
+body.dark-mode-grid .nx-table-nested .nested-row {
+  background-color: var(--main-code-bg);
+}
+
+/* Custom Table */
+body.dark-mode-grid .nx-table-custom .product-category {
+  color: var(--menu-subtext);
+}
+
+/* Sortable Table */
+body.dark-mode-grid .nx-table-sortable th.sortable:hover {
+  background-color: var(--menu-hover-bg);
+}
+
+/* Pagination */
+body.dark-mode-grid .nx-table-pagination .nx-btn {
+  background-color: var(--main-code-bg);
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+}
+
+body.dark-mode-grid .nx-table-pagination .nx-btn:hover {
+  background-color: var(--menu-hover-bg);
+}
+
+body.dark-mode-grid .nx-table-pagination .nx-btn.nx-active {
+  background-color: var(--aside-active);
+  color: var(--text-primary);
+}
+
+/* Filter Input */
+body.dark-mode-grid .nx-table-filter .nx-input {
+  background-color: var(--main-code-bg);
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+}
+
+body.dark-mode-grid .nx-table-filter .nx-input::placeholder {
+  color: var(--menu-subtext);
+}
+
+/* Checkbox dalam Tabel */
+body.dark-mode-grid .nx-table-selectable .nx-checkbox {
+  border-color: var(--border-primary);
+}
+
+body.dark-mode-grid .nx-table-selectable .nx-checkbox:checked {
+  background-color: var(--aside-active);
+  border-color: var(--aside-active);
+}
+
+/* Toggle Button untuk Nested Table */
+body.dark-mode-grid .toggle-nested {
+  background-color: var(--main-code-bg);
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+}
+
+body.dark-mode-grid .toggle-nested:hover {
+  background-color: var(--menu-hover-bg);
+}
+
+/* Action Buttons dalam Custom Table */
+body.dark-mode-grid .nx-table-custom .action-buttons .nx-btn {
+  background-color: var(--main-code-bg);
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+}
+
+body.dark-mode-grid .nx-table-custom .action-buttons .nx-btn:hover {
+  background-color: var(--menu-hover-bg);
+}
+
+body.dark-mode-grid .nx-table-custom .action-buttons .nx-btn-primary {
+  background-color: var(--aside-active);
+  color: var(--text-primary);
+  border-color: var(--aside-active);
+}
+
+body.dark-mode-grid .nx-table-custom .action-buttons .nx-btn-danger {
+  background-color: rgba(220, 53, 69, 0.8);
+  color: var(--text-primary);
+  border-color: rgba(220, 53, 69, 0.8);
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+  body.dark-mode-grid .nx-table-responsive {
+    border-color: var(--border-primary);
+  }
+} 
+
+
+  .dark-mode table {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .dark-mode table th {
+        background-color: #2d2d2d;
+        color: #ffffff;
+        padding: 12px;
+        border: 1px solid #404040;
+    }
+
+    .dark-mode table td {
+        padding: 10px;
+        border: 1px solid #404040;
+    }
+
+    .dark-mode table tr:hover {
+        background-color: #2d2d2d;
+    }
+
+
+.nx-table, table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background-color: var(--nx-white);
+    border: 1px solid var(--nx-tabel-75);
+}
+
+/* Tambahkan style untuk tabel dalam dark mode */
+body.dark-mode-grid table {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid var(--border-primary);
+}
+
+body.dark-mode-grid table th {
+    background-color: var(--main-code-bg);
+    color: var(--text-primary);
+    padding: 12px;
+    border: 1px solid var(--border-primary);
+    font-weight: 600;
+}
+
+body.dark-mode-grid table td {
+    padding: 10px;
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+}
+
+body.dark-mode-grid table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+body.dark-mode-grid table tr:hover {
+    background-color: var(--menu-hover-bg);
+}
+
+/* Style untuk caption tabel jika ada */
+body.dark-mode-grid table caption {
+    color: var(--text-primary);
+    padding: 10px;
+    font-style: italic;
+}
+
+/* Style untuk tabel dengan border collapse */
+body.dark-mode-grid table.bordered {
+    border-collapse: collapse;
+}
+
+/* Style untuk tabel yang responsive */
+@media screen and (max-width: 768px) {
+    body.dark-mode-grid .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

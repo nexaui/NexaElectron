@@ -1,0 +1,181 @@
+.nx-list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem;
+}
+
+.nx-list-item {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: -1px;
+}
+
+.nx-list-item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.nx-list-item:last-child {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.nx-list-item.active {
+  z-index: 2;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+a.nx-list-item {
+  color: #495057;
+  text-decoration: none;
+}
+
+a.nx-list-item:hover {
+  background-color: var(--hover-bg);
+  text-decoration: none;
+}
+
+a.nx-list-item.active:hover {
+  background-color: #0056b3;
+}
+
+/* Disabled state */
+.nx-list-item.disabled,
+.nx-list-item:disabled {
+  pointer-events: none;
+  background-color: #e9ecef;
+  color: #6c757d;
+}
+
+/* Flush variant */
+.nx-list-group-flush {
+  border-radius: 0;
+}
+
+.nx-list-group-flush .nx-list-item {
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
+.nx-list-group-flush .nx-list-item:first-child {
+  border-top: 0;
+}
+
+/* Contextual variants */
+.nx-list-primary {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.nx-list-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.nx-list-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.nx-list-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Badge support */
+.nx-list-item.d-flex {
+  display: flex !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+/* List with Image */
+.nx-list-item-action {
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.nx-list-item-action:hover {
+  background-color: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.nx-list-media {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+}
+
+.nx-list-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+.nx-list-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.nx-list-title {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+ color: var(--text-color);
+}
+
+.nx-list-text {
+  margin-bottom: 0.25rem;
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+.nx-list-time {
+  color: #adb5bd;
+  font-size: 0.75rem;
+}
+
+/* Hover effect untuk list dengan gambar */
+.nx-list-item-action:hover .nx-list-title {
+  color: var(--text-color);
+}
+
+.nx-list-item-action:hover .nx-list-img {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+} 
+
+body.dark-mode-grid .nx-list-item a:hover {
+    color: var(--text-color);
+}
+body.dark-mode-grid a.nx-list-item {
+  color: #909da9;
+}
+
+body.dark-mode-grid a.nx-list-item:hover {
+  color: var(--text-color);;
+}
+
+body.dark-mode-grid a.nx-list-item.active:hover {
+    color: var(--text-color);
+}
+body.dark-mode-grid .nx-list-item a:hover {
+    color: var(--main-link-hover);
+}

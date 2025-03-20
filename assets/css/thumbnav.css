@@ -1,0 +1,58 @@
+.nx-thumbnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.nx-thumbnav > li {
+  flex: 0 0 auto;
+}
+
+.nx-thumbnav img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+
+.nx-thumbnav a:hover img {
+  opacity: 0.7;
+}
+
+.nx-thumbnav-vertical {
+  flex-direction: column;
+}
+
+.nx-thumbnav-caption {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.nx-thumbnav-item {
+  text-decoration: none;
+}
+
+.nx-thumbnav .nx-active img {
+  border: 2px solid #0066cc;
+}
+
+.nx-thumbnav-small img {
+  width: 60px;
+  height: 60px;
+}
+
+.nx-thumbnav-large img {
+  width: 100px;
+  height: 100px;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}

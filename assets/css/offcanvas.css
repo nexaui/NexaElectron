@@ -1,0 +1,80 @@
+.nx-offcanvas {
+  position: fixed;
+  background: white;
+  z-index: 100000;
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nx-offcanvas[data-position="left"] {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 300px;
+  transform: translateX(-100%);
+}
+
+.nx-offcanvas[data-position="right"] {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 300px;
+  transform: translateX(100%);
+}
+
+.nx-offcanvas[data-position="top"] {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  transform: translateY(-100%);
+}
+
+.nx-offcanvas[data-position="bottom"] {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  transform: translateY(100%);
+}
+
+.nx-offcanvas.show {
+  visibility: visible;
+  transform: translate(0, 0);
+}
+
+.nx-offcanvas-header {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nx-offcanvas-body {
+  padding: 1rem;
+}
+
+.nx-offcanvas-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nx-offcanvas-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nx-offcanvas .nx-offcanvas-header,
+.nx-offcanvas .nx-offcanvas-body {
+ color: #333;
+}

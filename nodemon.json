@@ -1,0 +1,11 @@
+{
+  "ignore": [
+    "assets/env-config.js",
+    "assets/css/*",
+    "public/*",
+    "package/*",
+    "dist/*"
+  ],
+  "watch": ["main.js"],
+  "ext": "js,json"
+}

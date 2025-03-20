@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/assets/nexaui.min.css" />
+    <style type="text/css">
+       .badge {
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: normal;
+    background-color: #000;
+    color: #fff;
+    font-size:13px;
+  }
+    </style>
+  </head>
+  <body style="padding:200px">
+    <div id="connection-status">
+      <span id="status-text"></span>
+    </div>
+
+    <div class="nx-row">
+      <div class="nx-col-4">
+        <div class="mb-20px">
+          <h2>Login</h2>
+          <p class="text-muted">
+            Silakan masuk menggunakan akun yang terdaftar
+          </p>
+        </div>
+
+        <form id="contactForm" class="hide">
+          <div class="form-nexa">
+            <TextInput
+              label="Email"
+              type="text"
+              name="email"
+              value="admin@gmail.com"
+              iconLeft="fas fa-user"
+              placeholder="Masukkan email"
+            />
+            <small class="text-muted"
+              >Gunakan email yang terdaftar di sistem</small
+            >
+          </div>
+
+          <div class="form-nexa mb-10px">
+            <label for="input_password">Password</label>
+            <div class="form-nexa-icon">
+              <input
+                type="password"
+                class="form-nexa-control"
+                name="password"
+                value="12345678"
+                id="input_password"
+                placeholder="Masukkan password"
+              />
+              <i class="fas fa-eye-slash" data-action="password-toggle"></i>
+            </div>
+            <small class="text-muted"
+              >Klik ikon mata untuk menampilkan/menyembunyikan password</small
+            >
+          </div>
+
+          <div class="mb-10px">
+            <a href="/forgot-password" class="text-primary">Lupa password?</a>
+          </div>
+
+          <button
+            class="nx-btn-success full-width rounded-xl icon-button"
+            title="Masuk"
+            id="masuk"
+            icon="fas fa-arrow-right"
+          >
+            Masuk ke Sistem
+          </button>
+        </form>
+      </div>
+      <div class="nx-col-8 pl-40px pt-10px">
+        <div class="content">
+    <img class="w-150px nx-media-img1" src="/assets/brand/border3.png" alt="">
+<div class="nx-media">
+  
+  <div class="nx-media-body pl-10px">
+    <h1 class="fs-40px">NexaUI Framework<small class="badge">v.1.0.1</small> </h1>
+   <dd class="fs-20px">For Developer Desktop</dd>
+
+          <p>
+           Selamat datang di NexaUI Framework! Kami menghadirkan solusi pengembangan Desktop yang benar-benar berbeda. Bayangkan Anda bisa langsung menulis HTML, CSS, dan JavaScript murni seperti yang Anda kuasai, tanpa perlu belajar sintaks template engine yang rumit.
+          </p>
+
+  </div>
+</div>
+        
+        </div>
+        <!-- Batas -->
+      </div>
+    </div>
+    <script type="module" src="/package/oauth/index.js"></script>
+  </body>
+</html>

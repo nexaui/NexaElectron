@@ -1,0 +1,18 @@
+{
+  "properti": {
+    "version": "v4.0.1",
+    "sitename": "NexaUI",
+    "favicon": "/assets/brand/border1.png",
+    "icon": "/assets/brand/border1.png",
+    "title": "NexaUIExpress  - framework",
+    "description": "Berkreasi! Dengan fokus pada HTML, CSS, "
+  },
+  "assets": [
+    "/assets/env-config.js",
+    "/assets/module/lib/jquery.js",
+    "https://unpkg.com/feather-icons",
+    "/assets/nexaui.min.css",
+    "module|/assets/nexaui.bundle.min.js",
+    "/assets/module/lib/jquery-ui.js"
+  ]
+}

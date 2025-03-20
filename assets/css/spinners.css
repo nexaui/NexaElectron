@@ -1,0 +1,178 @@
+.nx-spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 0.25rem solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+.nx-spinner-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.2rem;
+}
+
+.nx-spinner-lg {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3rem;
+}
+
+.nx-spinner-grow {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: currentColor;
+  border-radius: 50%;
+  animation: spinner-grow 0.75s linear infinite;
+}
+
+.nx-spinner-grow-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.nx-spinner-grow-lg {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Warna spinner */
+.nx-spinner-primary, .nx-spinner-grow.nx-spinner-primary {
+  color: #00d1b2;
+}
+
+.nx-spinner-secondary, .nx-spinner-grow.nx-spinner-secondary {
+  color: #64748B;
+}
+
+.nx-spinner-success, .nx-spinner-grow.nx-spinner-success {
+  color: #107C10;
+}
+
+.nx-spinner-danger, .nx-spinner-grow.nx-spinner-danger {
+  color: #E81123;
+}
+
+.nx-spinner-warning, .nx-spinner-grow.nx-spinner-warning {
+  color: #FFB900;
+}
+
+.nx-spinner-info, .nx-spinner-grow.nx-spinner-info {
+  color: #0078D4;
+}
+
+.nx-spinner-light, .nx-spinner-grow.nx-spinner-light {
+  color: #F1F5F9;
+}
+
+.nx-spinner-dark, .nx-spinner-grow.nx-spinner-dark {
+  color: #333333;
+}
+
+.nx-spinner-white, .nx-spinner-grow.nx-spinner-white {
+  color: #ffffff;
+}
+
+/* Tambahan warna dari button.css */
+.nx-spinner-blue, .nx-spinner-grow.nx-spinner-blue {
+  color: #0078D4;
+}
+
+.nx-spinner-purple, .nx-spinner-grow.nx-spinner-purple {
+  color: #5C2D91;
+}
+
+.nx-spinner-teal, .nx-spinner-grow.nx-spinner-teal {
+  color: #00B294;
+}
+
+.nx-spinner-green, .nx-spinner-grow.nx-spinner-green {
+  color: #107C10;
+}
+
+.nx-spinner-system, .nx-spinner-grow.nx-spinner-system {
+  color: #E6E6E6;
+}
+
+.nx-spinner-error, .nx-spinner-grow.nx-spinner-error {
+  color: #E81123;
+}
+
+.nx-spinner-accent, .nx-spinner-grow.nx-spinner-accent {
+  color: #0078D4;
+}
+
+.nx-spinner-accent-light, .nx-spinner-grow.nx-spinner-accent-light {
+  color: #F0F0F0;
+}
+
+.nx-spinner-modern, .nx-spinner-grow.nx-spinner-modern {
+  color: #333333;
+}
+
+.nx-spinner-link, .nx-spinner-grow.nx-spinner-link {
+  color: #6366F1;
+}
+
+.nx-spinner-ghost, .nx-spinner-grow.nx-spinner-ghost {
+  color: #00E5BE;
+}
+
+.nx-spinner-black, .nx-spinner-grow.nx-spinner-black {
+  color: #212529;
+}
+
+/* Hover state untuk spinner yang interaktif */
+.nx-spinner[role="button"]:hover,
+.nx-spinner-grow[role="button"]:hover {
+  opacity: 0.8;
+}
+
+/* Tambahan untuk grup spinner jika diperlukan */
+.nx-spinner-group {
+  display: inline-flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-grow {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Styling untuk demo */
+.spinner-demo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.preview-box button {
+  margin-right: 1rem;
+}
+
+/* Menambahkan style untuk teks putih */
+.text-white {
+  color: #fff;
+}
+
+/* Menambahkan margin untuk jarak antara spinner dan teks */
+.nx-spinner + .text-white,
+.nx-spinner-grow + .text-white {
+  margin-left: 0.75rem;
+} 

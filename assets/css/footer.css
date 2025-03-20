@@ -1,0 +1,279 @@
+.nx-footer {
+    background: #f8f9fa;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    color: #333;
+}
+
+.nx-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nx-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nx-footer-col h5 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.nx-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nx-footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.nx-footer-col a {
+  color: #666;
+  text-decoration: none;
+}
+
+.nx-footer-col a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* Footer dengan Media Sosial */
+.nx-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nx-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.nx-social-icon:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Footer dengan Newsletter */
+.nx-newsletter {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nx-newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.nx-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Footer Dark Mode */
+.nx-footer-dark {
+  background: #222;
+  color: #fff;
+}
+
+.nx-footer-dark a {
+  color: #fff;
+}
+
+.nx-footer-dark a:hover {
+  color: #ddd;
+}
+
+/* Footer Sticky */
+.nx-footer-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(248, 249, 250, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 0;
+}
+
+.nx-footer-sticky .nx-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* Footer Responsif */
+.nx-footer-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.nx-footer-brand {
+  flex: 1;
+  min-width: 250px;
+}
+
+.nx-footer-brand h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.nx-footer-brand p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.nx-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  flex: 2;
+}
+
+.nx-footer-section {
+  min-width: 180px;
+}
+
+.nx-footer-section h5 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.nx-footer-section h5::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #2196F3;
+}
+
+.nx-footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nx-footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.nx-footer-section a {
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.nx-footer-section a:hover {
+  color: #2196F3;
+  transform: translateX(5px);
+}
+
+/* Footer Kustom */
+.nx-footer-custom {
+  position: relative;
+  background: linear-gradient(45deg, #2196F3, #3F51B5);
+  color: white;
+  overflow: hidden;
+}
+
+.nx-footer-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: url('path/to/wave.svg') repeat-x;
+  animation: wave 10s linear infinite;
+}
+
+.nx-footer-logo img {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+@keyframes wave {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 1000px; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nx-footer-responsive {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem 1rem;
+  }
+  
+  .nx-footer-brand {
+    text-align: center;
+  }
+  
+  .nx-footer-links {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .nx-footer-section {
+    text-align: center;
+    min-width: 100%;
+  }
+  
+  .nx-footer-section h5::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+  }
+  
+  .nx-footer-sticky .nx-footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nx-footer-responsive {
+    padding: 1.5rem 1rem;
+  }
+  
+  .nx-footer-brand h4 {
+    font-size: 1.3rem;
+  }
+  
+  .nx-footer-section {
+    padding: 0 1rem;
+  }
+}

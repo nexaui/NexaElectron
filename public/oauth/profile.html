@@ -1,0 +1,78 @@
+<div class="nx-row pl-100px">
+  <div class="nx-col-5">
+    <div class="projects-section">
+      <div class="projects-section-header">
+        <p>Akun Profil</p>
+        <p class="time">December, 12</p>
+      </div>
+
+      <div class="nx-stats nx-stats-profile">
+        <div class="nx-stats-profile-header">
+          <div
+            class="nx-stats-avatar"
+            id="profileupdate"
+            onclick="handleProfileClick()"
+          >
+            <img src="/assets/avatar/wanita.png" alt="User Avatar" />
+            <span class="nx-stats-avatar-status online"></span>
+          </div>
+          <div class="nx-stats-profile-info">
+            <h4 data-nexakey>${uid.nama}</h4>
+            <p  data-nexakey>${uid.email}</p>
+          </div>
+        </div> 
+        <div class="nx-stats-profile-metrics">
+          <div class="nx-stats-metric">
+            <h5>Projects</h5>
+            <span>28</span>
+          </div>
+          <div class="nx-stats-divider"></div>
+          <div class="nx-stats-metric">
+            <h5>Tasks</h5>
+            <span>45</span>
+          </div>
+          <div class="nx-stats-divider"></div>
+          <div class="nx-stats-metric">
+            <h5>Rating</h5>
+            <span>4.8</span>
+          </div>
+        </div>
+      </div>
+      <div id="network"></div>
+    </div>
+  </div>
+  <div class="nx-col-4">
+    <div class="projects-section">
+      <div class="projects-section-header">
+        <p>Kebijakan Privasi</p>
+      </div>
+      <p>
+        Kami menghargai privasi Anda dan berkomitmen untuk melindungi informasi
+        pribadi yang Anda berikan. Data yang kami kumpulkan hanya digunakan
+        untuk meningkatkan layanan dan pengalaman pengguna. Kami tidak akan
+        membagikan informasi pribadi Anda kepada pihak ketiga tanpa persetujuan
+        Anda, kecuali diwajibkan oleh hukum. Kami menggunakan enkripsi dan
+        protokol keamanan terkini untuk melindungi data Anda.
+      </p>
+    </div>
+  </div>
+</div>
+<script></script>
+
+<style type="text/css">
+  .nx-stats {
+    padding: 20px;
+    border-radius: 8px;
+    background: #ffffff00;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+  }
+  .nx-stats-avatar {
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  .nx-stats-avatar:hover {
+    opacity: 0.8;
+  }
+</style>
+<script type="module" src="/oauth/profile.js"></script>
